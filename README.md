@@ -5,10 +5,20 @@ This repository holds the configuration of my homelab powered by NixOS
 ```
 .
 ├── .editorconfig
+├── flake.lock
+├── flake.nix
 ├── .gitignore
-└── README.md
+├── hosts
+│   └── mahler
+│       ├── configuration.nix
+│       └── hardware-configuration.nix
+├── README.md
+├── services
+│   └── vscode-server
+│       └── flake.nix
+└── SETUP.md
 
-3 files
+6 directories, 11 files
 ```
 
 <!-- DIRECTORY_STRUCTURE_END -->
