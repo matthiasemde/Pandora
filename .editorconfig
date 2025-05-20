@@ -1,0 +1,39 @@
+# Root .editorconfig for your homelab
+root = true
+
+# Default rules
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+
+# Nix files
+[*.nix]
+indent_size = 2
+
+# YAML (e.g., homepage config, docker-compose if used)
+[*.yml]
+indent_size = 2
+[*.yaml]
+indent_size = 2
+
+# Shell scripts
+[*.sh]
+indent_style = space
+indent_size = 2
+
+# Markdown (e.g., README.md)
+[*.md]
+trim_trailing_whitespace = false
+indent_size = 2
+
+# JSON (just in case)
+[*.json]
+indent_size = 2
+
+# Ignore files in .git
+[.gitignore]
+trim_trailing_whitespace = false
