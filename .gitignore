@@ -1,0 +1,61 @@
+# Nix build artifacts
+/result
+/result-*
+/.nix-gc-lock
+/nix-shell-*
+/tmp/
+/.cache/
+
+# Flake and Nix store garbage
+flake.lock.lock
+flake.lock.backup
+*.drv
+*.gcno
+*.o
+*.so
+
+# Editor/IDE files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+*.bak
+
+# Logs
+*.log
+
+# Docker
+docker-compose.override.yml
+# *.env
+.env.local
+.envrc
+docker-data/
+**/config.json         # e.g. Docker daemon config or app-specific
+
+# Secrets (if any)
+/secrets/
+*.key
+*.pem
+*.crt
+*.enc
+*.secret
+
+# Systemd runtime links
+*.service
+
+# Misc
+*.tar.gz
+*.zip
+*.img
+*.qcow2
+*.iso
+
+# Backup/Temp files
+*.old
+*.tmp
+*.orig
+*.save
+*.backup
+.DS_Store
+Thumbs.db
