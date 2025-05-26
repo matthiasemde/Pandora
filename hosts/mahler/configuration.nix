@@ -70,6 +70,9 @@
     packages = with pkgs; [
       tree
     ];
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA2PpyYqQ4VWU5wvtx0mJrc3ORel6niNbeuGMsiJPCi"
+    ];
   };
 
   # List packages installed in system profile.
