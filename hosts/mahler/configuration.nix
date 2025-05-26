@@ -40,7 +40,7 @@
     LC_TELEPHONE = "de_DE.utf8";
     LC_TIME = "de_DE.utf8";
   };
-    
+
   console = {
     font = "Lat2-Terminus16";
     keyMap = lib.mkForce "de";
