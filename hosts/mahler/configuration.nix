@@ -66,13 +66,8 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.matthias = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
-      tree
-    ];
-    openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA2PpyYqQ4VWU5wvtx0mJrc3ORel6niNbeuGMsiJPCi"
-    ];
+    extraGroups = [ "wheel" "docker" ]; # Enable ‘sudo’ for the user.
+    linger = true # make sure services like docker persist after logout
   };
 
   # List packages installed in system profile.
@@ -83,7 +78,6 @@
     git
     bat
     btop
-    neofetch
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -128,5 +122,4 @@
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "24.11"; # Did you read the comment?
-
 }
