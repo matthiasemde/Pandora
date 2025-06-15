@@ -67,7 +67,7 @@
   users.users.matthias = {
     isNormalUser = true;
     extraGroups = [ "wheel" "docker" ]; # Enable ‘sudo’ for the user.
-    linger = true # make sure services like docker persist after logout
+    linger = true; # make sure services like docker persist after logout
   };
 
   # List packages installed in system profile.

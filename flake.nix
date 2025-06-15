@@ -5,11 +5,13 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     # Local flakes
-    vscode-server.url = "./services/vscode-server";
-    virtualization.url = "./virtualization";
+    vscode-server.url = "path:./services/vscode-server";
+    virtualization.url = "path:./virtualization";
+    homepage.url       = "path:./services/homepage";
+    traefik.url        = "path:./services/traefik";
   };
 
-  outputs = { self, nixpkgs, vscode-server, virtualization,... }: {
+  outputs = { self, nixpkgs, vscode-server, virtualization, homepage, traefik,... }: {
     nixosConfigurations.mahler = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
 
@@ -19,6 +21,10 @@
         vscode-server.nixosModules.default
         virtualization.nixosModules.default
       ];
+
+      specialArgs = {
+        services = [ homepage traefik ];
+      };
     };
   };
 }

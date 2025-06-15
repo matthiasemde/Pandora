@@ -5,6 +5,24 @@
         "systems": "systems"
       },
       "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "flake-utils_2": {
+      "inputs": {
+        "systems": "systems_2"
+      },
+      "locked": {
         "lastModified": 1681202837,
         "narHash": "sha256-H+Rh19JDwRtpVPAWp64F+rlEtxUWBAQW28eAi3SRSzg=",
         "owner": "numtide",
@@ -18,18 +36,48 @@
         "type": "github"
       }
     },
+    "homepage": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "path": "./services/homepage",
+        "type": "path"
+      },
+      "original": {
+        "path": "./services/homepage",
+        "type": "path"
+      },
+      "parent": []
+    },
+    "homepage_2": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_4"
+      },
+      "locked": {
+        "path": "../services/homepage",
+        "type": "path"
+      },
+      "original": {
+        "path": "../services/homepage",
+        "type": "path"
+      },
+      "parent": [
+        "virtualization"
+      ]
+    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1747542820,
-        "narHash": "sha256-GaOZntlJ6gPPbbkTLjbd8BMWaDYafhuuYRNrxCGnPJw=",
+        "lastModified": 1749834526,
+        "narHash": "sha256-izgPGLeUeFB9loC+n2X6TO2n8pOGvVcR3jKqxTGOwgc=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "292fa7d4f6519c074f0a50394dbbe69859bb6043",
+        "rev": "db8414903dd6b3042e1ac471eafc18ca4ccb54a4",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "nixos-unstable",
+        "ref": "nixos-24.11",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -52,6 +100,86 @@
     },
     "nixpkgs_3": {
       "locked": {
+        "lastModified": 1749834526,
+        "narHash": "sha256-izgPGLeUeFB9loC+n2X6TO2n8pOGvVcR3jKqxTGOwgc=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "db8414903dd6b3042e1ac471eafc18ca4ccb54a4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-24.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_4": {
+      "locked": {
+        "lastModified": 1749834526,
+        "narHash": "sha256-izgPGLeUeFB9loC+n2X6TO2n8pOGvVcR3jKqxTGOwgc=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "db8414903dd6b3042e1ac471eafc18ca4ccb54a4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-24.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_5": {
+      "locked": {
+        "lastModified": 1749834526,
+        "narHash": "sha256-izgPGLeUeFB9loC+n2X6TO2n8pOGvVcR3jKqxTGOwgc=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "db8414903dd6b3042e1ac471eafc18ca4ccb54a4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-24.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_6": {
+      "locked": {
+        "lastModified": 1749834526,
+        "narHash": "sha256-izgPGLeUeFB9loC+n2X6TO2n8pOGvVcR3jKqxTGOwgc=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "db8414903dd6b3042e1ac471eafc18ca4ccb54a4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-24.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_7": {
+      "locked": {
+        "lastModified": 1747542820,
+        "narHash": "sha256-GaOZntlJ6gPPbbkTLjbd8BMWaDYafhuuYRNrxCGnPJw=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "292fa7d4f6519c074f0a50394dbbe69859bb6043",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_8": {
+      "locked": {
         "lastModified": 1682134069,
         "narHash": "sha256-TnI/ZXSmRxQDt2sjRYK/8j8iha4B4zP2cnQCZZ3vp7k=",
         "owner": "NixOS",
@@ -66,7 +194,10 @@
     },
     "root": {
       "inputs": {
-        "nixpkgs": "nixpkgs",
+        "homepage": "homepage",
+        "nixpkgs": "nixpkgs_2",
+        "traefik": "traefik",
+        "virtualization": "virtualization",
         "vscode-server": "vscode-server"
       }
     },
@@ -85,10 +216,72 @@
         "type": "github"
       }
     },
-    "vscode": {
+    "systems_2": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "traefik": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_3"
+      },
+      "locked": {
+        "path": "./services/traefik",
+        "type": "path"
+      },
+      "original": {
+        "path": "./services/traefik",
+        "type": "path"
+      },
+      "parent": []
+    },
+    "traefik_2": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_6"
+      },
+      "locked": {
+        "path": "../services/traefik",
+        "type": "path"
+      },
+      "original": {
+        "path": "../services/traefik",
+        "type": "path"
+      },
+      "parent": [
+        "virtualization"
+      ]
+    },
+    "virtualization": {
       "inputs": {
         "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs_3"
+        "homepage": "homepage_2",
+        "nixpkgs": "nixpkgs_5",
+        "traefik": "traefik_2"
+      },
+      "locked": {
+        "path": "./virtualization",
+        "type": "path"
+      },
+      "original": {
+        "path": "./virtualization",
+        "type": "path"
+      },
+      "parent": []
+    },
+    "vscode": {
+      "inputs": {
+        "flake-utils": "flake-utils_2",
+        "nixpkgs": "nixpkgs_8"
       },
       "locked": {
         "lastModified": 1729422940,
@@ -106,7 +299,7 @@
     },
     "vscode-server": {
       "inputs": {
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": "nixpkgs_7",
         "vscode": "vscode"
       },
       "locked": {

@@ -12,11 +12,7 @@
         vscode.nixosModules.default
       ];
 
-      # Optional: add defaults or overrides
-      services.vscode-server = {
-        enable = true;
-        # enableFor = [ "youruser" ];
-      };
+      services.vscode-server.enable = true;
     };
   };
 }
