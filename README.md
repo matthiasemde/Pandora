@@ -14,13 +14,25 @@ This repository holds the configuration of my homelab powered by NixOS
 │       └── hardware-configuration.nix
 ├── README.md
 ├── services
+│   ├── homepage
+│   │   ├── config
+│   │   │   ├── bookmarks.yaml
+│   │   │   ├── custom.css
+│   │   │   ├── custom.js
+│   │   │   ├── docker.yaml
+│   │   │   ├── services.yaml
+│   │   │   ├── settings.yaml
+│   │   │   └── widgets.yaml
+│   │   └── flake.nix
+│   ├── traefik
+│   │   └── flake.nix
 │   └── vscode-server
 │       └── flake.nix
 ├── SETUP.md
 └── virtualization
     └── flake.nix
 
-6 directories, 10 files
+9 directories, 19 files
 ```
 
 <!-- DIRECTORY_STRUCTURE_END -->
