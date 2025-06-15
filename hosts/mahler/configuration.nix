@@ -74,7 +74,8 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.matthias = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "docker" ]; # Enable ‘sudo’ for the user.
+    linger = true; # make sure services like docker persist after logout
   };
 
   # List packages installed in system profile.

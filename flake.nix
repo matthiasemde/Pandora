@@ -6,6 +6,7 @@
 
     # Local flakes
     vscode-server.url = "./services/vscode-server";
+    virtualization.url = "./virtualization";
   };
 
   outputs =
@@ -13,6 +14,7 @@
       self,
       nixpkgs,
       vscode-server,
+      virtualization,
       ...
     }:
     {
@@ -23,7 +25,13 @@
           ./hosts/mahler/configuration.nix
 
           vscode-server.nixosModules.default
+          virtualization.nixosModules.default
         ];
+
+        specialArgs = {
+          hostname = "mahler";
+          services = [ ];
+        };
       };
     };
 }
