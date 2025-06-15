@@ -16,9 +16,11 @@ This repository holds the configuration of my homelab powered by NixOS
 ├── services
 │   └── vscode-server
 │       └── flake.nix
-└── SETUP.md
+├── SETUP.md
+└── virtualization
+    └── flake.nix
 
-6 directories, 11 files
+6 directories, 10 files
 ```
 
 <!-- DIRECTORY_STRUCTURE_END -->
