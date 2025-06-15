@@ -5,8 +5,10 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     # Local flakes
-    vscode-server.url = "./services/vscode-server";
-    virtualization.url = "./virtualization";
+    vscode-server.url = "path:./services/vscode-server";
+    virtualization.url = "path:./virtualization";
+    homepage.url = "path:./services/homepage";
+    traefik.url = "path:./services/traefik";
   };
 
   outputs =
@@ -15,6 +17,8 @@
       nixpkgs,
       vscode-server,
       virtualization,
+      homepage,
+      traefik,
       ...
     }:
     {
@@ -30,7 +34,10 @@
 
         specialArgs = {
           hostname = "mahler";
-          services = [ ];
+          services = [
+            homepage
+            traefik
+          ];
         };
       };
     };
