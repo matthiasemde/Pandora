@@ -9,6 +9,7 @@
     virtualization.url = "path:./virtualization";
     homepage.url = "path:./services/homepage";
     traefik.url = "path:./services/traefik";
+    adguard.url = "path:./services/adguard";
   };
 
   outputs =
@@ -19,6 +20,7 @@
       virtualization,
       homepage,
       traefik,
+      adguard,
       ...
     }:
     {
@@ -37,6 +39,7 @@
           services = [
             homepage
             traefik
+            adguard
           ];
         };
       };

@@ -74,7 +74,10 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.matthias = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [
+      "wheel"
+      "docker"
+    ]; # Enable ‘sudo’ for the user.
     linger = true; # make sure services like docker persist after logout
   };
 
@@ -102,6 +105,11 @@
   services.openssh.enable = true;
 
   # Open ports in the firewall.
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 53 ]; # Allow TCP DNS
+    allowedUDPPorts = [ 53 ]; # Allow UDP DNS
+  };
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
