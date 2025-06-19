@@ -8,7 +8,7 @@
   outputs = { self, nixpkgs }: let
     pkgs = nixpkgs.legacyPackages.x86_64-linux;
   in {
-    containers = {
+    containers = { hostname }: {
       traefik = {
         image   = "traefik:latest";
         ports   = [ "80:80" "443:443" "8080:8080" ];

@@ -31,7 +31,7 @@
       };
     };
   in {
-    containers = {
+    containers = { hostname }: {
       homepage = {
         image = "homepage-derived:latest";
         imageFile = homepageDerived;
@@ -41,11 +41,11 @@
           "/var/run/docker.sock:/var/run/docker.sock"
         ];
         environment = {
-          HOMEPAGE_ALLOWED_HOSTS = "mahler";
+          HOMEPAGE_ALLOWED_HOSTS = hostname;
         };
         labels = {
           "traefik.enable" = "true";
-          "traefik.http.routers.home.rule" = "Host(`mahler`)";
+          "traefik.http.routers.home.rule" = "Host(`${hostname}`)";
           "traefik.http.services.home.loadbalancer.server.port" = "3000";
         };
         autoStart = true;

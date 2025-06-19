@@ -23,6 +23,7 @@
       ];
 
       specialArgs = {
+        hostname = "mahler";
         services = [ homepage traefik ];
       };
     };
