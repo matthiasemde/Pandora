@@ -31,6 +31,12 @@
               "--entrypoints.web.address=:80"
               "--entrypoints.websecure.address=:443"
             ];
+            labels = {
+              "homepage.group" = "Utilities";
+              "homepage.name" = "Traefik";
+              "homepage.href" = "http://${hostname}:8080";
+              "homepage.description" = "Reverse proxy dashboard";
+            };
           };
         };
     };
