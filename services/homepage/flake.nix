@@ -55,6 +55,9 @@
               "traefik.enable" = "true";
               "traefik.http.routers.home.rule" = "Host(`${host (hostname)}`)";
               "traefik.http.services.home.loadbalancer.server.port" = "3000";
+              "traefik.http.routers.home.middlewares" = "auth";
+              "traefik.http.middlewares.auth.basicauth.realm" = "Interner Bereich";
+              "traefik.http.middlewares.auth.basicauth.users" = "thema:$apr1$/ntvZmAv$0Pc8l1GVJjJsLugI61Co21";
             };
           };
         };
