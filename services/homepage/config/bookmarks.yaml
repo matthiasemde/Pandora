@@ -3,16 +3,6 @@
 # https://gethomepage.dev/configs/bookmarks
 
 - Developer:
-    - Github:
+    - Project Pandora:
         - abbr: GH
-          href: https://github.com/
-
-- Social:
-    - Reddit:
-        - abbr: RE
-          href: https://reddit.com/
-
-- Entertainment:
-    - YouTube:
-        - abbr: YT
-          href: https://youtube.com/
+          href: https://github.com/matthiasemde/Pandora
