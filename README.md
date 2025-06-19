@@ -23,7 +23,8 @@ This repository holds the configuration of my homelab powered by NixOS
 │   │   │   ├── services.yaml
 │   │   │   ├── settings.yaml
 │   │   │   └── widgets.yaml
-│   │   └── flake.nix
+│   │   │   flake.nix
+│   │   └── README.md
 │   ├── traefik
 │   │   └── flake.nix
 │   └── vscode-server
