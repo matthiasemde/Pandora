@@ -1,7 +1,6 @@
 ---
 # For configuration options and examples, please see:
 # https://gethomepage.dev/configs/settings/
-
-providers:
-  openweathermap: openweathermapapikey
-  weatherapi: weatherapiapikey
+title: Project Pandora
+description: Landing page for Mattis und Thesis homelab
+color: emerald
