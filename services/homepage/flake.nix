@@ -37,7 +37,7 @@
         imageFile = homepageDerived;
         ports = [ "3000:3000" ];
         volumes = [
-          "/etc/logs:/app/config/logs"
+          "/etc/logs/homepage:/app/config/logs"
           "/var/run/docker.sock:/var/run/docker.sock"
         ];
         environment = {
