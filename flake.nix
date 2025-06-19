@@ -9,9 +9,10 @@
     virtualization.url = "path:./virtualization";
     homepage.url       = "path:./services/homepage";
     traefik.url        = "path:./services/traefik";
+    adguard.url        = "path:./services/adguard";
   };
 
-  outputs = { self, nixpkgs, vscode-server, virtualization, homepage, traefik,... }: {
+  outputs = { self, nixpkgs, vscode-server, virtualization, homepage, traefik, adguard,... }: {
     nixosConfigurations.mahler = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
 
@@ -24,7 +25,7 @@
 
       specialArgs = {
         hostname = "mahler";
-        services = [ homepage traefik ];
+        services = [ homepage traefik adguard ];
       };
     };
   };
