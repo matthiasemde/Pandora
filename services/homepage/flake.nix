@@ -4,6 +4,7 @@
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
 
   outputs = { self, nixpkgs }: let
+    host = hostname: "home.${hostname}.local";
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
 
@@ -40,12 +41,12 @@
           "/var/run/docker.sock:/var/run/docker.sock"
         ];
         environment = {
-          HOMEPAGE_ALLOWED_HOSTS = hostname;
+          HOMEPAGE_ALLOWED_HOSTS = host(hostname);
           PORT = "3001";
         };
         labels = {
           "traefik.enable" = "true";
-          "traefik.http.routers.home.rule" = "Host(`${hostname}`)";
+          "traefik.http.routers.home.rule" = "Host(`${host(hostname)}`)";
           "traefik.http.routers.home.middlewares" = "auth";
           "traefik.http.services.home.loadbalancer.server.port" = "3001";
           "traefik.http.middlewares.auth.basicauth.realm" = "Interner Bereich";
