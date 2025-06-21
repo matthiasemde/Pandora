@@ -13,7 +13,7 @@ I am following [this](https://www.youtube.com/watch?v=lUB2rwDUm5A) guide to set 
 
 First of switch into sudo mode
 ```bash
-$ sudo -i 
+$ sudo -i
 ```
 
 Set keyboard layout to german using.
@@ -21,7 +21,7 @@ Set keyboard layout to german using.
 # loadkeys de
 ```
 
-Look at the drives using 
+Look at the drives using
 ```
 # lsblk
 ```
@@ -85,7 +85,7 @@ Clone the repo into your home directory.
 $ git clone ...
 ```
 
-Build using 
+Build using
 ```
 $ nixos-rebuild switch --flake .#mahler
 ```
