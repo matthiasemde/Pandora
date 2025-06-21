@@ -39,6 +39,7 @@
         volumes = [
           "/etc/logs/homepage:/app/config/logs"
           "/var/run/docker.sock:/var/run/docker.sock"
+          "/data:/data"
         ];
         environment = {
           HOMEPAGE_ALLOWED_HOSTS = host(hostname);
