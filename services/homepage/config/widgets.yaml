@@ -3,9 +3,14 @@
 # https://gethomepage.dev/configs/info-widgets/
 
 - resources:
+    label: System
     cpu: true
     memory: true
     disk: /
+
+- resources:
+    label: Storage
+    disk: /data
 
 - search:
     provider: duckduckgo
