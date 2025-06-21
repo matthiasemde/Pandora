@@ -78,6 +78,8 @@
     git
     bat
     btop
+    pciutils
+    lsof
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
