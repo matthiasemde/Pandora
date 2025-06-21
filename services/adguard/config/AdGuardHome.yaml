@@ -107,6 +107,10 @@ filters:
     url: https://adguardteam.github.io/HostlistsRegistry/assets/filter_2.txt
     name: AdAway Default Blocklist
     id: 2
+  - enabled: true
+    url: https://github.com/ppfeufer/adguard-filter-list/blob/master/blocklist?raw=true
+    name: ppfeufer | adguard-filter-list
+    id: 1750506935
 whitelist_filters: []
 user_rules: []
 dhcp:
