@@ -35,19 +35,19 @@
       homepage = {
         image = "homepage-derived:latest";
         imageFile = homepageDerived;
-        ports = [ "3000:3000" ];
         volumes = [
           "/etc/logs/homepage:/app/config/logs"
           "/var/run/docker.sock:/var/run/docker.sock"
         ];
         environment = {
           HOMEPAGE_ALLOWED_HOSTS = hostname;
+          PORT = "3001";
         };
         labels = {
           "traefik.enable" = "true";
           "traefik.http.routers.home.rule" = "Host(`${hostname}`)";
           "traefik.http.routers.home.middlewares" = "auth";
-          "traefik.http.services.home.loadbalancer.server.port" = "3000";
+          "traefik.http.services.home.loadbalancer.server.port" = "3001";
           "traefik.http.middlewares.auth.basicauth.realm" = "Interner Bereich";
           "traefik.http.middlewares.auth.basicauth.users" = "thema:$apr1$/ntvZmAv$0Pc8l1GVJjJsLugI61Co21";
         };
