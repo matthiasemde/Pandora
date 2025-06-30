@@ -38,6 +38,7 @@
       };
     in
     {
+      name = "homepage";
       containers =
         { hostname, ... }:
         {

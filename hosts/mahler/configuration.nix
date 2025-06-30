@@ -91,7 +91,15 @@
     btop
     pciutils
     lsof
+    age
+    age-plugin-yubikey
   ];
+
+  services.pcscd = {
+    enable = true;
+  };
+
+  services.udev.packages = [pkgs.yubikey-personalization];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

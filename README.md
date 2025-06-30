@@ -11,6 +11,10 @@ This repository holds the configuration of my homelab powered by NixOS
 │       ├── hardware-configuration.nix
 │       └── secrets
 ├── README.md
+├── secret-mgmt
+│   ├── add_secret.sh
+│   ├── flake.nix
+│   └── README.md
 ├── secrets
 │   ├── host-key.nix.mahler
 │   └── yubi-key.nix.mahler
