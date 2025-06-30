@@ -13,6 +13,13 @@ This repository holds the configuration of my homelab powered by NixOS
 │       ├── configuration.nix
 │       └── hardware-configuration.nix
 ├── README.md
+├── secret-mgmt
+│   ├── add_secret.sh
+│   ├── flake.nix
+│   └── README.md
+├── secrets
+│   ├── host-key.nix.mahler
+│   └── yubi-key.nix.mahler
 ├── services
 │   ├── adguard
 │   │   ├── config
@@ -37,7 +44,7 @@ This repository holds the configuration of my homelab powered by NixOS
 └── virtualization
     └── flake.nix
 
-11 directories, 22 files
+13 directories, 27 files
 ```
 
 <!-- DIRECTORY_STRUCTURE_END -->

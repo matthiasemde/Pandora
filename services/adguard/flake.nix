@@ -51,6 +51,7 @@
           -o parent=enp106s0f3u2 \
         '';
       };
+      name = "adguard";
       containers =
         { hostname, ... }:
         {

@@ -15,11 +15,12 @@
           lib,
           hostname,
           services,
+          getServiceEnvFiles,
           ...
         }:
         let
           mergedContainers = lib.foldl' (
-            acc: service: acc // service.containers { inherit hostname; }
+            acc: service: acc // service.containers { inherit hostname getServiceEnvFiles; }
           ) { } services;
           mergedNetworks = lib.foldl' (
             acc: service: acc // (if service ? networks then service.networks else { })
