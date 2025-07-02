@@ -27,7 +27,7 @@
             volumes = [
               "/data/services/firefly/app/upload:/var/www/html/storage/upload"
             ];
-            networks = [ "${backendNetwork}" ];
+            networks = [ "traefik" "${backendNetwork}" ];
             environmentFiles = getServiceEnvFiles name ++ [ ./.env ];
             labels = {
               "traefik.enable" = "true";
