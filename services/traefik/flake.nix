@@ -12,6 +12,9 @@
     in
     {
       name = "traefik";
+      networks = {
+        traefik = "";
+      };
       containers =
         { hostname, ... }:
         {
@@ -22,6 +25,7 @@
               "443:443"
               "8080:8080"
             ];
+            networks = [ "traefik" ];
             volumes = [
               "/etc/traefik:/etc/traefik"
               "/var/run/docker.sock:/var/run/docker.sock"

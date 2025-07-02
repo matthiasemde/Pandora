@@ -50,6 +50,7 @@
               "/var/run/docker.sock:/var/run/docker.sock"
               "/data:/data"
             ];
+            networks = [ "traefik" ];
             environment = {
               HOMEPAGE_ALLOWED_HOSTS = host (hostname);
             };
