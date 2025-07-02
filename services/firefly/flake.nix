@@ -33,6 +33,13 @@
               "traefik.enable" = "true";
               "traefik.http.routers.${appName}.rule" = "Host(`${host (hostname)}`)";
               "traefik.http.services.${appName}.loadbalancer.server.port" = "8080";
+              
+              # Homepage integration
+              "homepage.group" = "Life Management";
+              "homepage.name" = "Firefly";
+              "homepage.icon" = "firefly";
+              "homepage.href" = "http://${host (hostname)}";
+              "homepage.description" = "Finance managment";
             };
           };
 
