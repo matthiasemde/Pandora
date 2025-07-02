@@ -64,6 +64,7 @@
               "/data/services/adguard/work:/opt/adguardhome/work"
             ];
             labels = {
+              "traefik.enable" = "false";
               # Homepage integration
               "homepage.group" = "Network";
               "homepage.name" = "AdGuard";
