@@ -133,6 +133,17 @@
         "type": "github"
       }
     },
+    "glances": {
+      "locked": {
+        "path": "./services/glances",
+        "type": "path"
+      },
+      "original": {
+        "path": "./services/glances",
+        "type": "path"
+      },
+      "parent": []
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -369,6 +380,7 @@
         "adguard": "adguard",
         "agenix": "agenix",
         "firefly": "firefly",
+        "glances": "glances",
         "homepage": "homepage",
         "nixpkgs": "nixpkgs_5",
         "secret-mgmt": "secret-mgmt",

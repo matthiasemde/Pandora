@@ -26,6 +26,8 @@ This repository holds the configuration of my homelab powered by NixOS
 │   ├── firefly
 │   │   ├── flake.nix
 │   │   └── secrets
+│   ├── glances
+│   │   └── flake.nix
 │   ├── homepage
 │   │   ├── config
 │   │   │   ├── bookmarks.yaml

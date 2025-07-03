@@ -4,3 +4,10 @@
 title: Project Pandora
 description: Landing page for Mattis und Thesis homelab
 color: emerald
+
+layout:
+  System:
+    style: row
+    columns: 3
+  Auto-Discovered1:
+  Auto-Discovered2:
