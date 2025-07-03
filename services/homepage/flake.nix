@@ -6,7 +6,6 @@
   outputs =
     { self, nixpkgs }:
     let
-      host = hostname: "home.${hostname}.local";
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
 
@@ -41,6 +40,9 @@
       name = "homepage";
       containers =
         { hostname, ... }:
+        let
+          host = "home.${hostname}.local";
+        in
         {
           homepage = {
             image = "homepage-derived:v1.0.0";
@@ -55,12 +57,13 @@
               "glances"
             ];
             environment = {
-              HOMEPAGE_ALLOWED_HOSTS = host (hostname);
+              HOMEPAGE_ALLOWED_HOSTS = host;
             };
             labels = {
+              # Traefik
               "traefik.enable" = "true";
               "traefik.docker.network" = "traefik";
-              "traefik.http.routers.home.rule" = "Host(`${host (hostname)}`)";
+              "traefik.http.routers.home.rule" = "Host(`${host}`)";
               "traefik.http.services.home.loadbalancer.server.port" = "3000";
               "traefik.http.routers.home.middlewares" = "auth";
               "traefik.http.middlewares.auth.basicauth.realm" = "Interner Bereich";

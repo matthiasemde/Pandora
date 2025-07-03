@@ -64,9 +64,11 @@
               "/data/services/adguard/work:/opt/adguardhome/work"
             ];
             labels = {
+              # Traefik (disabled)
               "traefik.enable" = "false";
-              # Homepage integration
-              "homepage.group" = "Network";
+
+              # Homepage
+              "homepage.group" = "Utilities";
               "homepage.name" = "AdGuard";
               "homepage.icon" = "adguard-home";
               "homepage.href" = "http://adguard.${hostname}.local";
