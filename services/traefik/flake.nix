@@ -27,7 +27,6 @@
             ];
             networks = [ "traefik" ];
             volumes = [
-              "/etc/traefik:/etc/traefik"
               "/var/run/docker.sock:/var/run/docker.sock"
             ];
             cmd = [
