@@ -50,12 +50,16 @@
               "/var/run/docker.sock:/var/run/docker.sock"
               "/data:/data"
             ];
-            networks = [ "traefik" ];
+            networks = [
+              "traefik"
+              "glances"
+            ];
             environment = {
               HOMEPAGE_ALLOWED_HOSTS = host (hostname);
             };
             labels = {
               "traefik.enable" = "true";
+              "traefik.docker.network" = "traefik";
               "traefik.http.routers.home.rule" = "Host(`${host (hostname)}`)";
               "traefik.http.services.home.loadbalancer.server.port" = "3000";
               "traefik.http.routers.home.middlewares" = "auth";

@@ -13,6 +13,7 @@
     ## Virtualization / Services
     virtualization.url = "path:./virtualization";
     homepage.url = "path:./services/homepage";
+    glances.url = "path:./services/glances";
     traefik.url = "path:./services/traefik";
     adguard.url = "path:./services/adguard";
     firefly.url = "path:./services/firefly";
@@ -25,6 +26,7 @@
       vscode-server,
       virtualization,
       homepage,
+      glances,
       traefik,
       adguard,
       agenix,
@@ -54,6 +56,7 @@
           hostname = "mahler";
           services = [
             homepage
+            glances
             traefik
             adguard
             firefly

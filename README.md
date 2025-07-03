@@ -32,6 +32,8 @@ This repository holds the configuration of my homelab powered by NixOS
 │   │   └── secrets
 │   │       ├── .env.age
 │   │       └── .env.age.nix
+│   ├── glances
+│   │   └── flake.nix
 │   ├── homepage
 │   │   ├── config
 │   │   │   ├── bookmarks.yaml
@@ -51,7 +53,7 @@ This repository holds the configuration of my homelab powered by NixOS
 └── virtualization
     └── flake.nix
 
-15 directories, 32 files
+16 directories, 33 files
 ```
 
 <!-- DIRECTORY_STRUCTURE_END -->
