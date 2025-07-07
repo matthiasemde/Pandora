@@ -1,0 +1,50 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+
+    ":pinVersions",
+    ":automergeMinor",
+    ":rebaseStalePrs"
+  ],
+  "labels": ["dependencies"],
+  "automergeStrategy": "fast-forward",
+  "lockFileMaintenance": {
+    "enabled": true,
+    "extends": ["schedule:weekly"],
+    "automerge": true,
+    "timezone": "Europe/Berlin"
+  },
+  "nix": {
+    "enabled": true
+  },
+  "packageRules": [
+    {
+      "matchManagers": ["nix"],
+      "matchDepNames": ["nixpkgs"],
+      "labels": ["nixpkgs"],
+      "automerge": false,
+      "prPriority": 10
+    },
+    {
+      "matchManagers": ["nix"],
+      "excludePackageNames": ["nixpkgs"],
+      "labels": ["flake-input"],
+      "automerge": false,
+      "prPriority": 5
+    },
+    {
+      "matchDatasources": ["docker"],
+      "pinDigests": true
+    }
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": ["(^|/)flake\\.nix$"],
+      "matchStrings": [
+        "(?<varName>[A-Za-z0-9_-]+RawImageReference)\\s*=\\s*\"(?<depName>[^:@\"]+)(?::(?<currentValue>[^@\"]+))?(?:@[^\"]+)?\";"
+      ],
+      "datasourceTemplate": "docker"
+    }
+  ]
+}
