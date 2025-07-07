@@ -5,7 +5,7 @@
     
     ":pinVersions",
     ":automergeMinor",
-    ":rebaseStalePrs",
+    ":rebaseStalePrs"
   ],
   "labels": ["dependencies"],
   "automergeStrategy": "fast-forward",
