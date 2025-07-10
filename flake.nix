@@ -15,6 +15,7 @@
     homepage.url = "path:./services/homepage";
     glances.url = "path:./services/glances";
     traefik.url = "path:./services/traefik";
+    cloudflared.url = "path:./services/cloudflared";
     adguard.url = "path:./services/adguard";
     firefly.url = "path:./services/firefly";
     home-assistant.url = "path:./services/home-assistant";
@@ -29,6 +30,7 @@
       homepage,
       glances,
       traefik,
+      cloudflared,
       adguard,
       agenix,
       secret-mgmt,
@@ -60,6 +62,7 @@
             homepage
             glances
             traefik
+            cloudflared
             adguard
             firefly
             home-assistant

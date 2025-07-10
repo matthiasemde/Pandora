@@ -23,6 +23,11 @@ This repository holds the configuration of my homelab powered by NixOS
 │   │   ├── config
 │   │   │   └── AdGuardHome.yaml
 │   │   └── flake.nix
+│   ├── cloudflared
+│   │   ├── config
+│   │   │   └── config.yaml
+│   │   ├── flake.nix
+│   │   └── secrets
 │   ├── firefly
 │   │   ├── flake.nix
 │   │   └── secrets
