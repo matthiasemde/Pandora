@@ -17,6 +17,7 @@
     traefik.url = "path:./services/traefik";
     adguard.url = "path:./services/adguard";
     firefly.url = "path:./services/firefly";
+    home-assistant.url = "path:./services/home-assistant";
   };
 
   outputs =
@@ -32,6 +33,7 @@
       agenix,
       secret-mgmt,
       firefly,
+      home-assistant,
       ...
     }:
     {
@@ -60,6 +62,7 @@
             traefik
             adguard
             firefly
+            home-assistant
           ];
           getServiceEnvFiles = secret-mgmt.lib.getServiceEnvFiles;
         };

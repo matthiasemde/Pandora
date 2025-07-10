@@ -3,13 +3,13 @@ This repository holds the configuration of my homelab powered by NixOS
 
 ```
 .
+├── cert.pem
 ├── flake.lock
 ├── flake.nix
 ├── hosts
 │   └── mahler
 │       ├── configuration.nix
-│       ├── hardware-configuration.nix
-│       └── secrets
+│       └── hardware-configuration.nix
 ├── README.md
 ├── secret-mgmt
 │   ├── add_secret.sh
@@ -27,6 +27,13 @@ This repository holds the configuration of my homelab powered by NixOS
 │   │   ├── flake.nix
 │   │   └── secrets
 │   ├── glances
+│   │   └── flake.nix
+│   ├── home-assistant
+│   │   ├── config
+│   │   │   ├── automations.yaml
+│   │   │   ├── configuration.yaml
+│   │   │   ├── scenes.yaml
+│   │   │   └── scripts.yaml
 │   │   └── flake.nix
 │   ├── homepage
 │   │   ├── config
