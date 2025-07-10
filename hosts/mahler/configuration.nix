@@ -115,10 +115,13 @@
   services.openssh.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall = {
-    enable = true;
-    allowedTCPPorts = [ 53 ]; # Allow TCP DNS
-    allowedUDPPorts = [ 53 ]; # Allow UDP DNS
+  networking = {
+    nameservers = [ "1.1.1.1" "8.8.8.8" ];
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [ 53 ]; # Allow TCP DNS
+      allowedUDPPorts = [ 53 ]; # Allow UDP DNS
+    };
   };
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
