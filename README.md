@@ -47,6 +47,9 @@ This repository holds the configuration of my homelab powered by NixOS
 │   │   ├── flake.nix
 │   │   └── README.md
 │   ├── traefik
+│   │   ├── config
+│   │   │   ├── error.html
+│   │   │   └── nginx.conf
 │   │   └── flake.nix
 │   └── vscode-server
 │       └── flake.nix
