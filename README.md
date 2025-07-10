@@ -53,6 +53,9 @@ This repository holds the configuration of my homelab powered by NixOS
 │   │   ├── flake.nix
 │   │   └── README.md
 │   ├── traefik
+│   │   ├── config
+│   │   │   ├── error.html
+│   │   │   └── nginx.conf
 │   │   └── flake.nix
 │   └── vscode-server
 │       └── flake.nix
@@ -60,7 +63,7 @@ This repository holds the configuration of my homelab powered by NixOS
 └── virtualization
     └── flake.nix
 
-18 directories, 38 files
+19 directories, 40 files
 ```
 
 <!-- DIRECTORY_STRUCTURE_END -->
