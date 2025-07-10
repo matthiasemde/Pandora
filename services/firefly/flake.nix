@@ -36,7 +36,8 @@
             environmentFiles = getServiceEnvFiles name ++ [ ./.env ];
             labels = {
               "traefik.enable" = "true";
-              "traefik.http.routers.${appName}.rule" = "Host(`${host}`)";
+              "traefik.docker.network" = "traefik";
+              "traefik.http.routers.${appName}.rule" = "HostRegexp(`firefly.*`)";
               "traefik.http.services.${appName}.loadbalancer.server.port" = "8080";
 
               # Homepage integration

@@ -57,13 +57,13 @@
               "glances"
             ];
             environment = {
-              HOMEPAGE_ALLOWED_HOSTS = host;
+                HOMEPAGE_ALLOWED_HOSTS = "*";
             };
             labels = {
               # Traefik
               "traefik.enable" = "true";
               "traefik.docker.network" = "traefik";
-              "traefik.http.routers.home.rule" = "Host(`${host}`)";
+              "traefik.http.routers.home.rule" = "HostRegexp(`home.*`)";
               "traefik.http.services.home.loadbalancer.server.port" = "3000";
               "traefik.http.routers.home.middlewares" = "auth";
               "traefik.http.middlewares.auth.basicauth.realm" = "Interner Bereich";
