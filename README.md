@@ -25,6 +25,13 @@ This repository holds the configuration of my homelab powered by NixOS
 │   │   ├── config
 │   │   │   └── AdGuardHome.yaml
 │   │   └── flake.nix
+│   ├── cloudflared
+│   │   ├── config
+│   │   │   └── config.yaml
+│   │   ├── flake.nix
+│   │   └── secrets
+│   │       ├── .env.age
+│   │       └── .env.age.nix
 │   ├── firefly
 │   │   ├── .db.env
 │   │   ├── .env
@@ -63,7 +70,7 @@ This repository holds the configuration of my homelab powered by NixOS
 └── virtualization
     └── flake.nix
 
-19 directories, 40 files
+22 directories, 44 files
 ```
 
 <!-- DIRECTORY_STRUCTURE_END -->

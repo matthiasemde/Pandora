@@ -25,7 +25,10 @@
               "443:443"
               "8080:8080"
             ];
-            networks = [ "traefik" ];
+            networks = [
+              "traefik"
+              "cloudflare-ingress"
+            ];
             volumes = [
               "/var/run/docker.sock:/var/run/docker.sock"
             ];
