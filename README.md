@@ -55,6 +55,11 @@ This repository holds the configuration of my homelab powered by NixOS
 │   │   │   └── widgets.yaml
 │   │   ├── flake.nix
 │   │   └── README.md
+│   ├── nas
+│   │   ├── flake.nix
+│   │   └── secrets
+│   │       ├── fileshare-pw.age
+│   │       └── fileshare-pw.age.nix
 │   ├── traefik
 │   │   ├── config
 │   │   │   ├── error.html

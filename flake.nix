@@ -19,6 +19,7 @@
     adguard.url = "path:./services/adguard";
     firefly.url = "path:./services/firefly";
     home-assistant.url = "path:./services/home-assistant";
+    nas.url = "path:./services/nas";
   };
 
   outputs =
@@ -36,6 +37,7 @@
       secret-mgmt,
       firefly,
       home-assistant,
+      nas,
       ...
     }:
     {
@@ -54,6 +56,7 @@
 
           secret-mgmt.nixosModules.default
           virtualization.nixosModules.default
+          nas.nixosModules.default
         ];
 
         specialArgs = {
@@ -66,6 +69,7 @@
             adguard
             firefly
             home-assistant
+            nas
           ];
           getServiceEnvFiles = secret-mgmt.lib.getServiceEnvFiles;
           getServiceSecrets = secret-mgmt.lib.getServiceSecrets;
