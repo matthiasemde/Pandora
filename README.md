@@ -33,12 +33,12 @@ This repository holds the configuration of my homelab powered by NixOS
 │   │       ├── .env.age
 │   │       └── .env.age.nix
 │   ├── firefly
-│   │   ├── .db.env
-│   │   ├── .env
 │   │   ├── flake.nix
 │   │   └── secrets
-│   │       ├── .env.age
-│   │       └── .env.age.nix
+│   │       ├── app_key.env.age
+│   │       ├── app_key.env.age.nix
+│   │       ├── gls.json.age
+│   │       └── gls.json.age.nix
 │   ├── glances
 │   │   └── flake.nix
 │   ├── home-assistant

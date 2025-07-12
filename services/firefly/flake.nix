@@ -10,12 +10,16 @@
       pkgs = nixpkgs.legacyPackages.${system};
       name = "firefly";
       appName = "${name}-app";
-      dbName = "${name}-db";
+      fintsName = "${name}-fints";
+      cronName = "${name}-cron";
       backendNetwork = "firefly-backend";
     in
     {
       inherit name;
       dependencies = {
+        files = {
+          "/data/services/firefly/app/database/database.sqlite" = "666";
+        };
         networks = {
           ${backendNetwork} = "";
         };
@@ -30,18 +34,33 @@
             image = "fireflyiii/core:version-6.2.19";
             volumes = [
               "/data/services/firefly/app/upload:/var/www/html/storage/upload"
+              "/data/services/firefly/app/database/database.sqlite:/var/www/html/storage/database/database.sqlite"
             ];
             networks = [
               "traefik"
               "${backendNetwork}"
             ];
-            environmentFiles = getServiceEnvFiles name ++ [ ./.env ];
+            environment = {
+              APP_ENV = "local";
+              APP_DEBUG = "false";
+              SITE_OWNER = "matthias@emdemail.de";
+              DEFAULT_LANGUAGE = "en_US";
+              DEFAULT_LOCALE = "de_DE";
+              TZ = "Europe/Berlin";
+              LOG_CHANNEL = "stack";
+              APP_LOG_LEVEL = "notice";
+              AUDIT_LOG_LEVEL = "emergency";
+              DB_CONNECTION = "sqlite";
+              APP_URL = "http://${host})";
+            };
+            environmentFiles = getServiceEnvFiles name;
             labels = {
+              # 🛡️ Traefik
               "traefik.enable" = "true";
               "traefik.http.routers.${appName}.rule" = "HostRegexp(`firefly.*`)";
               "traefik.http.services.${appName}.loadbalancer.server.port" = "8080";
 
-              # Homepage integration
+              # 🏠 Homepage integration
               "homepage.group" = "Life Management";
               "homepage.name" = "Firefly";
               "homepage.icon" = "firefly";
@@ -50,30 +69,43 @@
             };
           };
 
-          ${dbName} = {
-            image = "mariadb:lts";
+          ${fintsName} = {
+            image = "docker.io/benkl/firefly-iii-fints-importer:latest";
+            # ports = [ "8123:8080" ]; # you only need to enable this during configuration
+            extraOptions = [ "--dns=1.1.1.1" ];
             volumes = [
-              "/data/services/firefly/db:/var/lib/mysql"
+              "/run/agenix/firefly-gls.json:/data/configurations/gls.json"
             ];
-            networks = [ "${backendNetwork}" ];
-            environmentFiles = getServiceEnvFiles name ++ [ ./.db.env ];
+            networks = [
+              "${backendNetwork}"
+            ];
             labels = {
+              # 🛡️ Traefik (disabled)
               "traefik.enable" = "false";
             };
           };
 
-          # firefly-cron = {
-          #   image = "alpine";
-          #   restartPolicy = "always";
-          #   envFile = "/etc/firefly-iii/.env";
-          #   command = ''
-          #     sh -c "
-          #       apk add tzdata && \
-          #       ln -sf /usr/share/zoneinfo/${TZ} /etc/localtime && \
-          #       echo '0 3 * * * wget -qO- http://${host(hostname)}/api/v1/cron/PLEASE_REPLACE_WITH_32_CHAR_CODE;echo' | crontab - && \
-          #       crond -f -L /dev/stdout"
-          #   '';
-          # };
+          ${cronName} = {
+            image = "alpine";
+            volumes = [ "/etc/localtime:/etc/localtime:ro" ];
+            extraOptions = [ "--dns=1.1.1.1" ];
+            cmd = [
+              "sh"
+              "-c"
+              ''
+                apk add --no-cache tzdata && \
+                echo "0 3 * * * wget -qO- http://firefly-fints:8080/?automate=true&config=gls.json; echo" | crontab - && \
+                crond -f -L /dev/stdout
+              ''
+            ];
+            networks = [
+              "${backendNetwork}"
+            ];
+            labels = {
+              # 🛡️ Traefik (disabled)
+              "traefik.enable" = "false";
+            };
+          };
         };
     };
 }
