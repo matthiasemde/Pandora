@@ -59,6 +59,11 @@ This repository holds the configuration of my homelab powered by NixOS
 │   │   │   └── widgets.yaml
 │   │   ├── flake.nix
 │   │   └── README.md
+│   ├── nas
+│   │   ├── flake.nix
+│   │   └── secrets
+│   │       ├── fileshare-pw.age
+│   │       └── fileshare-pw.age.nix
 │   ├── traefik
 │   │   ├── config
 │   │   │   ├── error.html
@@ -74,7 +79,7 @@ This repository holds the configuration of my homelab powered by NixOS
 └── virtualization
     └── flake.nix
 
-23 directories, 47 files
+25 directories, 50 files
 ```
 
 <!-- DIRECTORY_STRUCTURE_END -->
