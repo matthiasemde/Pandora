@@ -36,7 +36,6 @@
             environmentFiles = getServiceEnvFiles name ++ [ ./.env ];
             labels = {
               "traefik.enable" = "true";
-              "traefik.docker.network" = "traefik";
               "traefik.http.routers.${appName}.rule" = "HostRegexp(`firefly.*`)";
               "traefik.http.services.${appName}.loadbalancer.server.port" = "8080";
 

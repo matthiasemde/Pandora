@@ -62,7 +62,6 @@
             labels = {
               # Traefik
               "traefik.enable" = "true";
-              "traefik.docker.network" = "traefik";
               "traefik.http.routers.home.rule" = "HostRegexp(`home.*`)";
               "traefik.http.services.home.loadbalancer.server.port" = "3000";
               "traefik.http.routers.home.middlewares" = "auth";

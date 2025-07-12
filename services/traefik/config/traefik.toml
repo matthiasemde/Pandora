@@ -145,6 +145,8 @@
 # Enable Docker configuration backend
 [providers.docker]
 
+  network = "traefik"
+
   # Docker server endpoint. Can be a tcp or a unix socket endpoint.
   #
   # Required
