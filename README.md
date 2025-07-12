@@ -54,8 +54,12 @@ This repository holds the configuration of my homelab powered by NixOS
 │   ├── traefik
 │   │   ├── config
 │   │   │   ├── error.html
-│   │   │   └── nginx.conf
-│   │   └── flake.nix
+│   │   │   ├── nginx.conf
+│   │   │   └── traefik.toml
+│   │   ├── flake.nix
+│   │   └── secrets
+│   │       ├── cf-token.env.age
+│   │       └── cf-token.env.age.nix
 │   └── vscode-server
 │       └── flake.nix
 ├── SETUP.md
