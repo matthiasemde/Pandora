@@ -3,8 +3,10 @@
     { ... }:
     {
       name = "glances";
-      networks = {
-        "glances" = "";
+      dependencies = {
+        networks = {
+          "glances" = "";
+        };
       };
       containers =
         { ... }:

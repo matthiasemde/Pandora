@@ -15,8 +15,10 @@
     in
     {
       inherit name;
-      networks = {
-        ${backendNetwork} = "";
+      dependencies = {
+        networks = {
+          ${backendNetwork} = "";
+        };
       };
       containers =
         { hostname, getServiceEnvFiles, ... }:
