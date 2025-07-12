@@ -16,7 +16,7 @@
         traefik = "";
       };
       containers =
-        { hostname, ... }:
+        { hostname, getServiceEnvFiles, ... }:
         {
           traefik = {
             image = "traefik:v3.4.3";
@@ -29,14 +29,14 @@
               "traefik"
               "cloudflare-ingress"
             ];
+            environmentFiles = getServiceEnvFiles "traefik";
             volumes = [
               "/var/run/docker.sock:/var/run/docker.sock"
+              "${./config/traefik.toml}:/traefik.toml:ro"
+              "/data/services/traefik/certs:/certs"
             ];
             cmd = [
-              "--api.insecure=true"
-              "--providers.docker=true"
-              "--entrypoints.web.address=:80"
-              "--entrypoints.websecure.address=:443"
+              "--configFile=traefik.toml"
             ];
             labels = {
               "homepage.group" = "Utilities";

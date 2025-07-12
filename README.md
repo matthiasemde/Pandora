@@ -62,15 +62,19 @@ This repository holds the configuration of my homelab powered by NixOS
 │   ├── traefik
 │   │   ├── config
 │   │   │   ├── error.html
-│   │   │   └── nginx.conf
-│   │   └── flake.nix
+│   │   │   ├── nginx.conf
+│   │   │   └── traefik.toml
+│   │   ├── flake.nix
+│   │   └── secrets
+│   │       ├── cf-token.env.age
+│   │       └── cf-token.env.age.nix
 │   └── vscode-server
 │       └── flake.nix
 ├── SETUP.md
 └── virtualization
     └── flake.nix
 
-22 directories, 44 files
+23 directories, 47 files
 ```
 
 <!-- DIRECTORY_STRUCTURE_END -->
