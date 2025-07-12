@@ -20,7 +20,15 @@
         }:
         let
           mergedContainers = lib.foldl' (
-            acc: service: acc // service.containers { inherit hostname getServiceEnvFiles; }
+            acc: service:
+            let
+              maybeContainers =
+                if lib.hasAttr "containers" service && builtins.isFunction service.containers then
+                  service.containers { inherit hostname getServiceEnvFiles; }
+                else
+                  { };
+            in
+            acc // maybeContainers
           ) { } services;
 
           mergedDependencies = lib.foldl' (
