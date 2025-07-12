@@ -56,7 +56,14 @@
 
       # -------- Secret Retrieval ---------
 
-      # getServiceSecrets: return secret env files under /run/agenix for a service
+      #getServiceSecrets: return all files under /run/agenix for a service
+      getServiceSecrets = serviceName:
+      let
+        ageFiles = scanDir ../services/${serviceName}/secrets;
+        secretNames = lib.map (fname: lib.removeSuffix ".age" fname) ageFiles;
+      in
+        lib.map (fname: "/run/agenix/${serviceName}-${fname}") secretNames;
+
       getServiceEnvFiles = serviceName:
         let
           ageFiles = scanDir ../services/${serviceName}/secrets;
@@ -89,6 +96,7 @@
       # Export helper function
       lib = {
         getServiceEnvFiles = getServiceEnvFiles;
+        getServiceSecrets = getServiceSecrets;
       };
     };
 }
