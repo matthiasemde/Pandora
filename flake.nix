@@ -68,6 +68,7 @@
             home-assistant
           ];
           getServiceEnvFiles = secret-mgmt.lib.getServiceEnvFiles;
+          getServiceSecrets = secret-mgmt.lib.getServiceSecrets;
         };
       };
     };
