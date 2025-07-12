@@ -7,8 +7,10 @@
     { self, nixpkgs }:
     {
       name = "cloudflared";
-      networks = {
-        "cloudflare-ingress" = "";
+      dependencies = {
+        networks = {
+          "cloudflare-ingress" = "";
+        };
       };
       containers =
         { getServiceEnvFiles, ... }:

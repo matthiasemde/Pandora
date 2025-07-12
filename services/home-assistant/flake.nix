@@ -7,6 +7,12 @@
     { self, ... }:
     {
       name = "home-assistant";
+      dependencies = {
+        files = {
+          "/data/services/home-assistant/home-assistant.db" = "644";
+          "/etc/logs/home-assistant.log" = "644";
+        };
+      };
       containers =
         { hostname, ... }:
         let
