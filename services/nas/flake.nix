@@ -50,13 +50,11 @@
             };
           };
 
-          system.activationScripts.nas-set-samba-password = {
-            text = ''
-              echo "Setting Samba password for ${shareUser} from ${shareUserPasswordFile}"
-              pw=$(cat ${shareUserPasswordFile})
-              echo -e "$pw\n$pw" | ${pkgs.samba}/bin/smbpasswd -s -a ${shareUser}
-            '';
-          };
+          system.activationScripts.nas-set-samba-password.text = ''
+            echo "Setting Samba password for ${shareUser} from ${shareUserPasswordFile}"
+            ${pkgs.coreutils}/bin/cat ${shareUserPasswordFile} ${shareUserPasswordFile} | \
+            ${pkgs.samba}/bin/smbpasswd -s -a ${shareUser}
+          '';
         };
     };
 }
