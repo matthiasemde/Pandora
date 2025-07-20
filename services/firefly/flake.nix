@@ -6,8 +6,6 @@
   outputs =
     { self, nixpkgs }:
     let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
       name = "firefly";
       appName = "${name}-app";
       fintsName = "${name}-fints";
@@ -94,7 +92,7 @@
               "-c"
               ''
                 apk add --no-cache tzdata && \
-                echo "0 3 * * * wget -qO- http://firefly-fints:8080/?automate=true&config=gls.json; echo" | crontab - && \
+                echo "0 3 * * * wget -O - -q 'http://firefly-fints:8080/?automate=true&config=gls.json'; echo" | crontab - && \
                 crond -f -L /dev/stdout
               ''
             ];
