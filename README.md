@@ -55,6 +55,13 @@ This repository holds the configuration of my homelab powered by NixOS
 │   │   │   └── widgets.yaml
 │   │   ├── flake.nix
 │   │   └── README.md
+│   ├── immich
+│   │   ├── flake.nix
+│   │   └── secrets
+│   │       ├── DB_PASSWORD.env.age
+│   │       ├── DB_PASSWORD.env.age.nix
+│   │       ├── POSTGRES_PASSWORD.env.age
+│   │       └── POSTGRES_PASSWORD.env.age.nix
 │   ├── nas
 │   │   ├── flake.nix
 │   │   └── secrets
