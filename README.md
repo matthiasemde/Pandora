@@ -67,6 +67,13 @@ This repository holds the configuration of my homelab powered by NixOS
 │   │   └── secrets
 │   │       ├── fileshare-pw.age
 │   │       └── fileshare-pw.age.nix
+│   ├── nextcloud
+│   │   ├── flake.nix
+│   │   └── secrets
+│   │       ├── NEXTCLOUD_ADMIN_PASSWORD.env.age
+│   │       ├── NEXTCLOUD_ADMIN_PASSWORD.env.age.nix
+│   │       ├── POSTGRES_PASSWORD.env.age
+│   │       └── POSTGRES_PASSWORD.env.age.nix
 │   ├── traefik
 │   │   ├── config
 │   │   │   ├── error.html
