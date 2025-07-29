@@ -22,6 +22,7 @@
     nas.url = "path:./services/nas";
     immich.url = "path:./services/immich";
     nextcloud.url = "path:./services/nextcloud";
+    vaultwarden.url = "path:./services/vaultwarden";
   };
 
   outputs =
@@ -42,6 +43,7 @@
       nas,
       immich,
       nextcloud,
+      vaultwarden,
       ...
     }:
     {
@@ -76,6 +78,7 @@
             nas
             immich
             nextcloud
+            vaultwarden
           ];
           getServiceEnvFiles = secret-mgmt.lib.getServiceEnvFiles;
           getServiceSecrets = secret-mgmt.lib.getServiceSecrets;
