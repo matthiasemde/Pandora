@@ -74,6 +74,13 @@ This repository holds the configuration of my homelab powered by NixOS
 │   │       ├── NEXTCLOUD_ADMIN_PASSWORD.env.age.nix
 │   │       ├── POSTGRES_PASSWORD.env.age
 │   │       └── POSTGRES_PASSWORD.env.age.nix
+│   ├── paperless
+│   │   ├── flake.nix
+│   │   └── secrets
+│   │       ├── PAPERLESS_SECRET_KEY.env.age
+│   │       ├── PAPERLESS_SECRET_KEY.env.age.nix
+│   │       ├── smtp-credentials.env.age
+│   │       └── smtp-credentials.env.age.nix
 │   ├── traefik
 │   │   ├── config
 │   │   │   ├── error.html

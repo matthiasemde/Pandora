@@ -23,6 +23,7 @@
     immich.url = "path:./services/immich";
     nextcloud.url = "path:./services/nextcloud";
     vaultwarden.url = "path:./services/vaultwarden";
+    paperless.url = "path:./services/paperless";
   };
 
   outputs =
@@ -44,6 +45,7 @@
       immich,
       nextcloud,
       vaultwarden,
+      paperless,
       ...
     }:
     {
@@ -79,6 +81,7 @@
             immich
             nextcloud
             vaultwarden
+            paperless
           ];
           getServiceEnvFiles = secret-mgmt.lib.getServiceEnvFiles;
           getServiceSecrets = secret-mgmt.lib.getServiceSecrets;
