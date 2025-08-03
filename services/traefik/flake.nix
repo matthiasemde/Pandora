@@ -28,6 +28,7 @@
             networks = [
               "traefik"
               "cloudflare-ingress"
+              "tailscale-ingress"
             ];
             environmentFiles = getServiceEnvFiles "traefik";
             volumes = [
@@ -62,12 +63,16 @@
               "traefik.http.routers.catchall.rule" = "PathPrefix(`/`)";
               "traefik.http.routers.catchall.priority" = "1";
               "traefik.http.routers.catchall.entrypoints" = "web";
+              "traefik.http.routers.catchall2.rule" = "Host(`traefik`)";
+              "traefik.http.routers.catchall2.priority" = "2";
+              "traefik.http.routers.catchall2.entrypoints" = "web";
 
               # Define the service used by the catchall router
               "traefik.http.services.catchall-service.loadbalancer.server.port" = "80";
 
               # Optional: Add a middleware to customize response (static page)
               "traefik.http.routers.catchall.middlewares" = "error-mw";
+              "traefik.http.routers.catchall2.middlewares" = "error-mw";
               "traefik.http.middlewares.error-mw.errors.status" = "404";
               "traefik.http.middlewares.error-mw.errors.service" = "catchall-service";
               "traefik.http.middlewares.error-mw.errors.query" = "/error.html";

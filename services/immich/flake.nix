@@ -41,6 +41,8 @@
               # 🛡️ Traefik
               "traefik.enable" = "true";
               "traefik.http.routers.immich.rule" = "HostRegexp(`immich.*`)";
+              # "traefik.http.routers.immich.entrypoints" = "websecure";
+              # "traefik.http.routers.immich.tls" = "true";
               "traefik.http.services.immich.loadbalancer.server.port" = "2283";
 
               # 🏠 Homepage integration

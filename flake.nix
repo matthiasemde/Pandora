@@ -16,6 +16,7 @@
     glances.url = "path:./services/glances";
     traefik.url = "path:./services/traefik";
     cloudflared.url = "path:./services/cloudflared";
+    tailscale.url = "path:./services/tailscale";
     adguard.url = "path:./services/adguard";
     firefly.url = "path:./services/firefly";
     home-assistant.url = "path:./services/home-assistant";
@@ -36,6 +37,7 @@
       glances,
       traefik,
       cloudflared,
+      tailscale,
       adguard,
       agenix,
       secret-mgmt,
@@ -74,6 +76,7 @@
             glances
             traefik
             cloudflared
+            tailscale
             adguard
             firefly
             home-assistant
