@@ -28,6 +28,11 @@
   [entryPoints.websecure]
     address = ":443"
 
+  [entryPoints.websecure.transport.respondingTimeouts]
+    readTimeout = "600s"
+    idleTimeout = "600s"
+    writeTimeout = "600s"
+
 [http]
   [http.redirections]
     [http.redirections.entryPoint]

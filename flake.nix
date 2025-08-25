@@ -20,6 +20,7 @@
     firefly.url = "path:./services/firefly";
     home-assistant.url = "path:./services/home-assistant";
     nas.url = "path:./services/nas";
+    immich.url = "path:./services/immich";
   };
 
   outputs =
@@ -38,6 +39,7 @@
       firefly,
       home-assistant,
       nas,
+      immich,
       ...
     }:
     {
@@ -70,6 +72,7 @@
             firefly
             home-assistant
             nas
+            immich
           ];
           getServiceEnvFiles = secret-mgmt.lib.getServiceEnvFiles;
           getServiceSecrets = secret-mgmt.lib.getServiceSecrets;
