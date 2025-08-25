@@ -24,6 +24,7 @@
     nextcloud.url = "path:./services/nextcloud";
     vaultwarden.url = "path:./services/vaultwarden";
     paperless.url = "path:./services/paperless";
+    radicale.url = "path:./services/radicale";
   };
 
   outputs =
@@ -46,6 +47,7 @@
       nextcloud,
       vaultwarden,
       paperless,
+      radicale,
       ...
     }:
     {
@@ -82,6 +84,7 @@
             nextcloud
             vaultwarden
             paperless
+            radicale
           ];
           getServiceEnvFiles = secret-mgmt.lib.getServiceEnvFiles;
           getServiceSecrets = secret-mgmt.lib.getServiceSecrets;

@@ -81,6 +81,10 @@ This repository holds the configuration of my homelab powered by NixOS
 │   │       ├── PAPERLESS_SECRET_KEY.env.age.nix
 │   │       ├── smtp-credentials.env.age
 │   │       └── smtp-credentials.env.age.nix
+│   ├── radicale
+│   │   ├── config
+│   │   │   └── config
+│   │   └── flake.nix
 │   ├── traefik
 │   │   ├── config
 │   │   │   ├── error.html
