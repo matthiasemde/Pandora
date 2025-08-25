@@ -21,6 +21,7 @@
     home-assistant.url = "path:./services/home-assistant";
     nas.url = "path:./services/nas";
     immich.url = "path:./services/immich";
+    nextcloud.url = "path:./services/nextcloud";
   };
 
   outputs =
@@ -40,6 +41,7 @@
       home-assistant,
       nas,
       immich,
+      nextcloud,
       ...
     }:
     {
@@ -73,6 +75,7 @@
             home-assistant
             nas
             immich
+            nextcloud
           ];
           getServiceEnvFiles = secret-mgmt.lib.getServiceEnvFiles;
           getServiceSecrets = secret-mgmt.lib.getServiceSecrets;
