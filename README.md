@@ -87,13 +87,20 @@ This repository holds the configuration of my homelab powered by NixOS
 │   │   └── secrets
 │   │       ├── cf-token.env.age
 │   │       └── cf-token.env.age.nix
+│   ├── vaultwarden
+│   │   ├── flake.nix
+│   │   └── secrets
+│   │       ├── ADMIN_TOKEN.env.age
+│   │       ├── ADMIN_TOKEN.env.age.nix
+│   │       ├── smtp-credentials.env.age
+│   │       └── smtp-credentials.env.age.nix
 │   └── vscode-server
 │       └── flake.nix
 ├── SETUP.md
 └── virtualization
     └── flake.nix
 
-29 directories, 60 files
+31 directories, 65 files
 ```
 
 <!-- DIRECTORY_STRUCTURE_END -->
