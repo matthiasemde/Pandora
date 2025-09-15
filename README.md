@@ -35,6 +35,13 @@ This repository holds the configuration of my homelab powered by NixOS
 │   │       ├── app_key.env.age.nix
 │   │       ├── gls.json.age
 │   │       └── gls.json.age.nix
+│   ├── frp
+│   │   ├── config
+│   │   │   └── frpc.toml
+│   │   ├── flake.nix
+│   │   └── secrets
+│   │       ├── FRP_TOKEN.env.age
+│   │       └── FRP_TOKEN.env.age.nix
 │   ├── glances
 │   │   └── flake.nix
 │   ├── home-assistant
@@ -68,12 +75,15 @@ This repository holds the configuration of my homelab powered by NixOS
 │   │       ├── fileshare-pw.age
 │   │       └── fileshare-pw.age.nix
 │   ├── nextcloud
+│   │   ├── Dockerfile
 │   │   ├── flake.nix
-│   │   └── secrets
-│   │       ├── NEXTCLOUD_ADMIN_PASSWORD.env.age
-│   │       ├── NEXTCLOUD_ADMIN_PASSWORD.env.age.nix
-│   │       ├── POSTGRES_PASSWORD.env.age
-│   │       └── POSTGRES_PASSWORD.env.age.nix
+│   │   ├── README.md
+│   │   ├── secrets
+│   │   │   ├── NEXTCLOUD_ADMIN_PASSWORD.env.age
+│   │   │   ├── NEXTCLOUD_ADMIN_PASSWORD.env.age.nix
+│   │   │   ├── POSTGRES_PASSWORD.env.age
+│   │   │   └── POSTGRES_PASSWORD.env.age.nix
+│   │   └── supervisord.conf
 │   ├── paperless
 │   │   ├── flake.nix
 │   │   └── secrets
@@ -84,7 +94,9 @@ This repository holds the configuration of my homelab powered by NixOS
 │   ├── radicale
 │   │   ├── config
 │   │   │   └── config
-│   │   └── flake.nix
+│   │   ├── flake.nix
+│   │   ├── README.md
+│   │   └── users
 │   ├── traefik
 │   │   ├── config
 │   │   │   ├── error.html
