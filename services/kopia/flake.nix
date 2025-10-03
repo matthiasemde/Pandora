@@ -15,20 +15,20 @@
             networks = [
               "traefik"
             ];
-            ports = [ "51515:51515" ];
+            # ports = [ "51515:51515" ];
             extraOptions = [ "--dns=1.1.1.1" ];
-            # mount the repo path (on your HDD)
             volumes = [
               "/etc/localtime:/etc/localtime:ro"
               # Mount local folders needed by kopia
               "/data/services/kopia/config/dir:/app/config"
+              "/data/services/kopia/certs:/certs"
               # "/data/services/kopia/cache/dir:/app/cache"
 
               # "/data/services/kopia/logs/dir:/app/logs"
               # Mount local folders to snapshot
               "/data/services:/data:ro"
               # Mount repository location
-              "/data/backup/kopia/repositories/main:/repository"
+              "/backup/kopia/repositories/main:/repository"
               # Mount path for browsing mounted snapshots
               "/tmp/kopia-browse:/tmp:shared"
             ];
@@ -41,24 +41,26 @@
             cmd = [
               "server"
               "start"
-              # "--config-file"
-              # "/app/server.config.json"
-              "--disable-csrf-token-checks"
-              "--insecure"
+              # "--tls-generate-cert" # needed only once on first startup
+              "--tls-cert-file"
+              "/certs/kopia-mahler.cert"
+              "--tls-key-file"
+              "/certs/kopia-mahler.key"
               "--address"
               "0.0.0.0:51515"
             ];
 
             labels = {
               "traefik.enable" = "true";
-              "traefik.http.routers.kopia.rule" = "HostRegexp(`kopia.*`)";
-              "traefik.http.routers.kopia.entrypoints" = "web";
-              "traefik.http.services.kopia.loadbalancer.server.port" = "51515";
+              "traefik.tcp.routers.kopia.rule" = "HostSNI(`kopia.emdecloud.de`)";
+              "traefik.tcp.routers.kopia.entrypoints" = "websecure";
+              "traefik.tcp.routers.kopia.tls.passthrough" = "true";
+              "traefik.tcp.services.kopia.loadbalancer.server.port" = "51515";
 
               "homepage.group" = "Utilities";
               "homepage.name" = "Kopia Server";
               "homepage.icon" = "kopia";
-              "homepage.href" = "https://kopia.mahler.local";
+              "homepage.href" = "https://kopia.emdecloud.de";
             };
           };
         };
