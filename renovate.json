@@ -32,10 +32,6 @@
       "labels": ["flake-input"],
       "automerge": false,
       "prPriority": 5
-    },
-    {
-      "matchDatasources": ["docker"],
-      "pinDigests": true
     }
   ],
   "regexManagers": [
