@@ -43,7 +43,7 @@
             sha256 = "sha256-R/zqzFFGZwiSuzM17OFsdEYCLkJ0zC50pAuxVad6FSM=";
           };
 
-          alpineRawImageReference = "alpine:3.22.1@sha256:eafc1edb577d2e9b458664a15f23ea1c370214193226069eb22921169fc7e43f";
+          alpineRawImageReference = "alpine:3.22.1@sha256:4bcff63911fcb4448bd4fdacec207030997caf25e9bea4045fa6c8c44de311d1";
           alpineImageReference = parseDockerImageReference alpineRawImageReference;
           alpineImage = pkgs.dockerTools.pullImage {
             imageName = alpineImageReference.name;
