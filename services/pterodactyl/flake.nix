@@ -52,7 +52,7 @@
             sha256 = "sha256-bmhCwN7Hjt2Ypho/i6E8u8aKJMagAQIcdQFdc3ztKC0=";
           };
 
-          redisRawImageReference = "redis:7@sha256:88e81357a782cf72ad2c4a8bac4391d193bae19ab119bb1bff3ea9344ab675be";
+          redisRawImageReference = "redis:7@sha256:d7432711a2a5c99c2e9dd0e006061cd274d7cb7a9e77f07ffe2ea99e21244677";
           redisImageReference = parseDockerImageReference redisRawImageReference;
           redisImage = pkgs.dockerTools.pullImage {
             imageName = redisImageReference.name;
