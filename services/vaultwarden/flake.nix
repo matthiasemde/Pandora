@@ -10,7 +10,7 @@
         let
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
-          vaultwardenRawImageReference = "vaultwarden/server:1.34.2@sha256:369a2a3bbfa0d8ac50da7db42f4beab10501fcc5fe155bc56497cec4339556a8";
+          vaultwardenRawImageReference = "vaultwarden/server:1.34.2@sha256:2981e809c332e46d49bd29e6a898ca5ba13fa431befabe52d0ce11ed237cb5ef";
           vaultwardenImageReference = parseDockerImageReference vaultwardenRawImageReference;
           vaultwardenImage = pkgs.dockerTools.pullImage {
             imageName = vaultwardenImageReference.name;
