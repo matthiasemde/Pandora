@@ -32,17 +32,13 @@
       "labels": ["flake-input"],
       "automerge": false,
       "prPriority": 5
-    },
-    {
-      "matchDatasources": ["docker"],
-      "pinDigests": true
     }
   ],
   "regexManagers": [
     {
       "fileMatch": ["(^|/)flake\\.nix$"],
       "matchStrings": [
-        "(?<varName>[A-Za-z0-9_-]+RawImageReference)\\s*=\\s*\"(?<depName>[^:@\"]+)(?::(?<currentValue>[^@\"]+))?(?:@[^\"]+)?\";"
+        "(?<varName>[A-Za-z0-9_-]+RawImageReference)\\s*=\\s*\"(?<depName>[^:@\"]+)(?::(?<currentValue>[^\\\"]+))?\";"
       ],
       "datasourceTemplate": "docker"
     }
