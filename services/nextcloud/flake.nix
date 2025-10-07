@@ -23,7 +23,7 @@
         let
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
-          postgresRawImageReference = "postgres:15@sha256:22d83dee85fd73ffa34e5b19d192184bad1fbc6b960aca3df4d31ac464532dab";
+          postgresRawImageReference = "postgres:15@sha256:c189d272e4fcdd1ac419adee675d30be3d389c22ee770d593f15819d22a68a0d";
           postgresImageReference = parseDockerImageReference postgresRawImageReference;
           postgresImage = pkgs.dockerTools.pullImage {
             imageName = postgresImageReference.name;
