@@ -1,7 +1,7 @@
 #!/bin/sh
 set -euo pipefail
 
-CONTAINER_NAME="kopia-server"
+CONTAINER_NAME="kopia"
 REPO_PATH="/repository"
 
 # Check if the repository exists inside the container
