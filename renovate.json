@@ -38,9 +38,10 @@
     {
       "fileMatch": ["(^|/)flake\\.nix$"],
       "matchStrings": [
-        "(?<varName>[A-Za-z0-9_-]+RawImageReference)\\s*=\\s*\"(?<depName>[^:@\"]+)(?::(?<currentValue>[^@\"]+))?(?:@(?<currentDigest>[^\"]+))?\";"
+        "RawImageReference\\s*=\\s*\"(?<depName>[a-zA-Z0-9._\\-/]+):(?<currentValue>[a-zA-Z0-9._-]+)@sha256:(?<currentDigest>[a-f0-9]{64})\""
       ],
-      "datasourceTemplate": "docker"
+      "datasourceTemplate": "docker",
+      "versioningTemplate": "docker"
     }
   ]
 }
