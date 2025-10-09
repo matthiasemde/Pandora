@@ -32,6 +32,13 @@
       "labels": ["flake-input"],
       "automerge": false,
       "prPriority": 5
+    },
+    {
+      "matchManagers": ["regex"],
+      "matchDatasources": ["docker"],
+      "labels": ["docker-image"],
+      "automerge": false,
+      "prPriority": 3
     }
   ],
   "regexManagers": [
@@ -41,7 +48,8 @@
         "RawImageReference\\s*=\\s*\"(?<depName>[a-zA-Z0-9._\\-/]+):(?<currentValue>[a-zA-Z0-9._-]+)@sha256:(?<currentDigest>[a-f0-9]{64})\""
       ],
       "datasourceTemplate": "docker",
-      "versioningTemplate": "docker"
+      "versioningTemplate": "docker",
+      "autoReplaceStringTemplate": "{{depName}}:{{newValue}}@sha256:{{newDigest}}"
     }
   ]
 }
