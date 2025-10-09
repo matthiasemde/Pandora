@@ -60,6 +60,13 @@
       ],
       "automerge": true,
       "prPriority": 3
+    },
+    {
+      "matchDatasources": ["docker"],
+      "matchUpdateTypes": ["digest"],
+      "automerge": true,
+      "automergeType": "pr",
+      "automergeStrategy": "auto"
     }
   ],
   "customManagers": [
