@@ -58,7 +58,7 @@
       "labels": [
         "docker-image"
       ],
-      "automerge": false,
+      "automerge": true,
       "prPriority": 3
     }
   ],
