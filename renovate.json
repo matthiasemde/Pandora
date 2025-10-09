@@ -2,16 +2,19 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended",
-
     ":pinVersions",
     ":automergeMinor",
     ":rebaseStalePrs"
   ],
-  "labels": ["dependencies"],
+  "labels": [
+    "dependencies"
+  ],
   "automergeStrategy": "fast-forward",
   "lockFileMaintenance": {
     "enabled": true,
-    "extends": ["schedule:weekly"],
+    "extends": [
+      "schedule:weekly"
+    ],
     "automerge": true,
     "timezone": "Europe/Berlin"
   },
@@ -20,30 +23,51 @@
   },
   "packageRules": [
     {
-      "matchManagers": ["nix"],
-      "matchDepNames": ["nixpkgs"],
-      "labels": ["nixpkgs"],
+      "matchManagers": [
+        "nix"
+      ],
+      "matchDepNames": [
+        "nixpkgs"
+      ],
+      "labels": [
+        "nixpkgs"
+      ],
       "automerge": false,
       "prPriority": 10
     },
     {
-      "matchManagers": ["nix"],
-      "excludePackageNames": ["nixpkgs"],
-      "labels": ["flake-input"],
+      "matchManagers": [
+        "nix"
+      ],
+      "labels": [
+        "flake-input"
+      ],
       "automerge": false,
-      "prPriority": 5
+      "prPriority": 5,
+      "matchPackageNames": [
+        "!nixpkgs"
+      ]
     },
     {
-      "matchManagers": ["regex"],
-      "matchDatasources": ["docker"],
-      "labels": ["docker-image"],
+      "matchManagers": [
+        "custom.regex"
+      ],
+      "matchDatasources": [
+        "docker"
+      ],
+      "labels": [
+        "docker-image"
+      ],
       "automerge": false,
       "prPriority": 3
     }
   ],
-  "regexManagers": [
+  "customManagers": [
     {
-      "fileMatch": ["(^|/)flake\\.nix$"],
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/(^|/)flake\\.nix$/"
+      ],
       "matchStrings": [
         "RawImageReference\\s*=\\s*\"(?<depName>[a-zA-Z0-9._\\-/]+):(?<currentValue>[a-zA-Z0-9._-]+)@sha256:(?<currentDigest>[a-f0-9]{64})\""
       ],
