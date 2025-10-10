@@ -15,7 +15,7 @@
         let
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
-          glancesRawImageReference = "nicolargo/glances:4.3.1@sha256:e31fafa1c18da2279fdedcc360c0a397e76c1414bb933342aa42df57068e7e56";
+          glancesRawImageReference = "nicolargo/glances:4.3.3@sha256:fae2cee5c9497b46a72e52261b2e825fe6c0e5de2f295829411e3d5ccf24ee5c";
           glancesImageReference = parseDockerImageReference glancesRawImageReference;
           glancesImage = pkgs.dockerTools.pullImage {
             imageName = glancesImageReference.name;
