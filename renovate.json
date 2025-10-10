@@ -51,6 +51,9 @@
     },
     {
       "description": "Block major version updates from automerging for Docker images",
+      "matchManagers": [
+        "custom.regex"
+      ],
       "matchDatasources": [
         "docker"
       ],
