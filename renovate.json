@@ -78,7 +78,7 @@
       ],
       "datasourceTemplate": "docker",
       "versioningTemplate": "docker",
-      "autoReplaceStringTemplate": "{{depName}}:{{newValue}}@sha256:{{newDigest}}"
+      "autoReplaceStringTemplate": "RawImageReference = {{{depName}}}:{{{newValue}}}@sha256:{{{newDigest}}}"
     }
   ]
 }
