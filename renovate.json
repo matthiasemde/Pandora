@@ -63,15 +63,21 @@
       "prPriority": 3
     },
     {
-      "matchDatasources": ["docker"],
-      "matchUpdateTypes": ["digest"],
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchUpdateTypes": [
+        "digest"
+      ],
       "enabled": false
     }
   ],
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": ["(^|/)flake\\.nix$"],
+      "managerFilePatterns": [
+        "/(^|/)flake\\.nix$/"
+      ],
       "matchStrings": [
         "RawImageReference\\s*=\\s*\"(?<depName>[a-zA-Z0-9._\\-/]+):(?<currentValue>[a-zA-Z0-9._-]+)@(?<currentDigest>sha256:[a-zA-Z0-9]+)\""
       ],
