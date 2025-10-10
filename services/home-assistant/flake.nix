@@ -16,7 +16,7 @@
         let
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
-          homeAssistantRawImageReference = "ghcr.io/home-assistant/home-assistant:2025.7@sha256:e5bf3905955081dc4aae3b3980870c43ce6d8ffb880b5447addb3b3ba00f7bc0";
+          homeAssistantRawImageReference = "ghcr.io/home-assistant/home-assistant:2025.10@sha256:9255033272ab8f7bede246109ea9e7302527faf3accbf2ba7ef619e2206107ad";
           homeAssistantImageReference = parseDockerImageReference homeAssistantRawImageReference;
           homeAssistantImage = pkgs.dockerTools.pullImage {
             imageName = homeAssistantImageReference.name;
