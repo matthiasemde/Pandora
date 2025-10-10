@@ -18,7 +18,7 @@
         let
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
-          traefikRawImageReference = "traefik:3.4.3@sha256:46f40f4c0c00282ea15748b57753fdaa47d719ab29ee3a121bab5296e0dc6898";
+          traefikRawImageReference = "traefik:v3.5.3@sha256:76ac93e6ff8c749c9b68e31698e93d3af38c6a6d10a6b989eeef97bf0b9887f8";
           traefikImageReference = parseDockerImageReference traefikRawImageReference;
           traefikImage = pkgs.dockerTools.pullImage {
             imageName = traefikImageReference.name;
