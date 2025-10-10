@@ -64,9 +64,9 @@
     {
       "matchDatasources": ["docker"],
       "matchUpdateTypes": ["digest"],
+      "labels": ["digest-update"],
       "automerge": true,
-      "automergeType": "pr",
-      "automergeStrategy": "auto"
+      "automergeType": "pr"
     }
   ],
   "customManagers": [
