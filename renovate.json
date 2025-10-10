@@ -50,22 +50,32 @@
       ]
     },
     {
+      "description": "Block major version updates from automerging for Docker images",
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "automerge": false
+    },
+    {
+      "description": "Automerge minor and patch Docker image updates",
       "matchManagers": [
         "custom.regex"
       ],
       "matchDatasources": [
         "docker"
       ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
       "labels": [
         "docker-image"
       ],
       "automerge": true,
       "prPriority": 3
-    },
-    {
-      "matchDatasources": ["docker"],
-      "matchUpdateTypes": ["digest"],
-      "enabled": false
     }
   ],
   "customManagers": [
