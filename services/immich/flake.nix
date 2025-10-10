@@ -32,7 +32,7 @@
             sha256 = "sha256-ieXjtlmxIWojjuvHgLPpZ8cc/dDd6WkKPmB5u4AwXvg=";
           };
 
-          immichMLRawImageReference = "ghcr.io/immich-app/immich-machine-learning:v1.144.1@sha256:21b6a0bf02426336f456e8dca43c55b6a79b8e01ee2c25f91bc817fc3a745e52";
+          immichMLRawImageReference = "ghcr.io/immich-app/immich-machine-learning:v2.0.1@sha256:45626a33361ef7ed361de41b0d2dc19e5949442cdf0a8eb64b157dc8a04e9855";
           immichMLImageReference = parseDockerImageReference immichMLRawImageReference;
           immichMLImage = pkgs.dockerTools.pullImage {
             imageName = immichMLImageReference.name;
