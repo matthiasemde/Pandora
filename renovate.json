@@ -6,6 +6,7 @@
     ":automergeMinor",
     ":rebaseStalePrs"
   ],
+  "pinDigests": true,
   "labels": [
     "dependencies"
   ],
@@ -72,10 +73,10 @@
       "customType": "regex",
       "fileMatch": ["(^|/)flake\\.nix$"],
       "matchStrings": [
-        "\"(?<depName>[a-zA-Z0-9._\\-/]+):(?<currentValue>[a-zA-Z0-9._-]+)@sha256:(?<currentDigest>[a-f0-9]{64})\""
+        "RawImageReference\\s*=\\s*\"(?<depName>[a-zA-Z0-9._\\-/]+):(?<currentValue>[a-zA-Z0-9._-]+)@(?<currentDigest>sha256:[a-zA-Z0-9]+)\""
       ],
       "datasourceTemplate": "docker",
-      "versioningTemplate": "docker"
+      "autoReplaceStringTemplate": "RawImageReference = \"{{{depName}}}:{{{newValue}}}@{{{newDigest}}}\""
     }
   ]
 }
