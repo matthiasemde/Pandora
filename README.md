@@ -48,13 +48,6 @@ The directory structure is automatically updated by a pre-commit hook. See the [
 │   │       ├── db-credentials.env.age.nix
 │   │       ├── smtp-credentials.env.age
 │   │       └── smtp-credentials.env.age.nix
-│   ├── cloudflared
-│   │   ├── config
-│   │   │   └── config.yaml
-│   │   ├── flake.nix
-│   │   └── secrets
-│   │       ├── .env.age
-│   │       └── .env.age.nix
 │   ├── firefly
 │   │   ├── flake.nix
 │   │   └── secrets
@@ -174,7 +167,7 @@ The directory structure is automatically updated by a pre-commit hook. See the [
 └── virtualization
     └── flake.nix
 
-52 directories, 113 files
+49 directories, 109 files
 ```
 
 <!-- DIRECTORY_STRUCTURE_END -->
