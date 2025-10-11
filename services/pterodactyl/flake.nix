@@ -58,7 +58,7 @@
             imageName = redisImageReference.name;
             imageDigest = redisImageReference.digest;
             finalImageTag = redisImageReference.tag;
-            sha256 = "sha256-VigxNiQYrKw8IeKNGTEi01chwwccka286qdmelz6Idc=";
+            sha256 = "sha256-CXa5elUnGSjjqWhPDs+vlIuLr/7XLcM19zkQPijjUrY=";
           };
 
           panelBaseConfig = {
