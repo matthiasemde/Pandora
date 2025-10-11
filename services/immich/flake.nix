@@ -41,7 +41,7 @@
             sha256 = "sha256-6INEsn30aYfaQY/FGQC5Cyue+3jGc7yMa8WF2U75IoM=";
           };
 
-          immichRedisRawImageReference = "docker.io/valkey/valkey:8-bookworm@sha256:fec42f399876eb6faf9e008570597741c87ff7662a54185593e74b09ce83d177";
+          immichRedisRawImageReference = "docker.io/valkey/valkey:8-bookworm@sha256:fea8b3e67b15729d4bb70589eb03367bab9ad1ee89c876f54327fc7c6e618571";
           immichRedisImageReference = parseDockerImageReference immichRedisRawImageReference;
           immichRedisImage = pkgs.dockerTools.pullImage {
             imageName = immichRedisImageReference.name;
