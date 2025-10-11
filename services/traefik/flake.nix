@@ -33,7 +33,7 @@
             imageName = nginxImageReference.name;
             imageDigest = nginxImageReference.digest;
             finalImageTag = nginxImageReference.tag;
-            sha256 = "sha256-QT2eDDKD8AkWMvJTarMJ/751cEfpiWbM1u1Gllc+QkE=";
+            sha256 = "sha256-EHUeHY55q4il4qhIxcOrrop/ofyCsbfY68x1zeRnGFM=";
           };
         in
         {
