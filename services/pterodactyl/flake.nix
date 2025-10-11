@@ -34,7 +34,7 @@
             sha256 = "sha256-7H5ybzd6RzlPsxFZKUp1bmiLfG9Q6we021FW5nQCPk4=";
           };
 
-          pterodactylDaemonRawImageReference = "ccarney16/pterodactyl-daemon:v1.11.13@sha256:e0d870157253f9919831372abd687e86b2fce4204fad2957dea38e976692197d";
+          pterodactylDaemonRawImageReference = "ccarney16/pterodactyl-daemon:v1.11.13@sha256:cab55f8983569616ae623d56778f5df29774ba0307cdc3eedd80f39ca1eb023d";
           pterodactylDaemonImageReference = parseDockerImageReference pterodactylDaemonRawImageReference;
           pterodactylDaemonImage = pkgs.dockerTools.pullImage {
             imageName = pterodactylDaemonImageReference.name;
