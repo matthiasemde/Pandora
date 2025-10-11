@@ -22,7 +22,7 @@
             imageName = homeAssistantImageReference.name;
             imageDigest = homeAssistantImageReference.digest;
             finalImageTag = homeAssistantImageReference.tag;
-            sha256 = "sha256-wDWbAGOx6TkH10ZoOnTnzSAbTfr8UW4hOjNTgTOokps=";
+            sha256 = "sha256-0qgXX8zxUa2eMs+8qGWGKWmPU7PrhuhFcfa8gFGntO0=";
           };
         in
         {
