@@ -48,6 +48,21 @@ jobs:
             exit $exit_code
           fi
       
+      - name: Validate flake syntax
+        if: steps.update.outputs.changes == 'true'
+        run: |
+          echo "Validating modified flake files..."
+          for flake in services/*/flake.nix; do
+            if git diff --name-only HEAD | grep -q "$flake"; then
+              echo "Checking $flake..."
+              # Basic syntax check using nix-instantiate
+              nix-instantiate --parse "$flake" > /dev/null || {
+                echo "Error: Invalid Nix syntax in $flake"
+                exit 1
+              }
+            fi
+          done
+      
       - name: Commit and push changes
         if: steps.update.outputs.changes == 'true'
         run: |
