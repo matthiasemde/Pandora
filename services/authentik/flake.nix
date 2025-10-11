@@ -27,7 +27,7 @@
             sha256 = "sha256-WaBINdtyR4hKfZs5VW47p+WVrQuwqHkYEWIhw4pWs88=";
           };
 
-          postgresRawImageReference = "docker.io/library/postgres:16-alpine@sha256:e75afc5bf90e2cad3f0ee2395ccbc31db663cd10d1d9cabd0de3c99fe4aa5bab";
+          postgresRawImageReference = "docker.io/library/postgres:18-alpine@sha256:f898ac406e1a9e05115cc2efcb3c3abb3a92a4c0263f3b6f6aaae354cbb1953a";
           postgresImageReference = parseDockerImageReference postgresRawImageReference;
           postgresImage = pkgs.dockerTools.pullImage {
             imageName = postgresImageReference.name;
