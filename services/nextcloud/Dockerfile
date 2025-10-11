@@ -1,4 +1,4 @@
-FROM nextcloud:31.0.9-apache
+FROM nextcloud:32.0.0-apache@sha256:3e70e4dfe882ef44738fdc30d9896fb07c12febb27c4a1177e3d63dc0004a0b4
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
