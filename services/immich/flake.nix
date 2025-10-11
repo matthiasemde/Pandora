@@ -47,7 +47,7 @@
             imageName = immichRedisImageReference.name;
             imageDigest = immichRedisImageReference.digest;
             finalImageTag = immichRedisImageReference.tag;
-            sha256 = "sha256-pRgJXPCztxizPzsRTPvBbNAxLC4XXBtIMKtz3joyLPk=";
+            sha256 = "sha256-EwHUGtmE9IPM6aF6+ayJrM0PmJpJtyFDzW3lw8iA+gM=";
           };
 
           immichDatabaseRawImageReference = "ghcr.io/immich-app/postgres:16-vectorchord0.4.3-pgvectors0.2.0@sha256:1a078b237c1d9b420b0ee59147386b4aa60d3a07a8e6a402fc84a57e41b043a4";
