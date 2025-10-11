@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
+set -uo pipefail  # Don't use -e, we want to handle errors ourselves
 
 # Colors for output
 RED='\033[0;31m'
@@ -137,8 +137,10 @@ echo ""
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 if [ "$CHANGES_MADE" = true ]; then
   echo -e "${GREEN}✓ Hash updates complete - changes were made${NC}"
+  echo "CHANGES_MADE=true"
   exit 0
 else
   echo -e "${YELLOW}✓ Hash updates complete - no changes needed${NC}"
+  echo "CHANGES_MADE=false"
   exit 1
 fi
