@@ -11,17 +11,21 @@ The `update-docker-hashes.yml` workflow automatically updates the SHA256 hashes 
 1. **Trigger**: The workflow runs when a pull request with a title starting with `chore(deps)` is opened, synchronized (updated), or reopened.
 
 2. **Process**:
-   - Checks out the PR branch
+   - Checks out the PR branch and fetches the base branch for comparison
    - Installs Nix with flakes support
-   - Scans all `services/*/flake.nix` files for Docker image references
-   - For each image found:
+   - Identifies only the `services/*/flake.nix` files that were modified in the PR
+   - For each modified file, identifies only the Docker image references that changed
+   - For each changed image:
      - Extracts the image name, tag, and digest from `*RawImageReference` variables
      - Uses `nix-prefetch-docker` to fetch the correct Nix SHA256 hash for the image
      - Compares the fetched hash with the current hash in the file
      - Updates the hash if it differs
+   - Validates Nix syntax of modified files
    - Commits and pushes the changes back to the PR branch if any hashes were updated
 
 3. **Permissions**: The workflow has `contents: write` permission to push changes to the PR branch.
+
+4. **Performance Optimization**: The workflow only processes files and images that were actually changed in the PR. This significantly reduces execution time since `nix-prefetch-docker` downloads each image before calculating the hash.
 
 ### Why This Is Needed
 

@@ -13,8 +13,23 @@ CHANGES_MADE=false
 
 echo "Starting Docker image hash update process..."
 
-# Find all service flake.nix files
-for flake in services/*/flake.nix; do
+# Get the base branch (usually main or master)
+BASE_BRANCH="${GITHUB_BASE_REF:-main}"
+echo "Comparing against base branch: $BASE_BRANCH"
+
+# Find only the service flake.nix files that were modified in this PR
+modified_flakes=$(git diff --name-only "origin/$BASE_BRANCH"...HEAD | grep -E '^services/.*/flake\.nix$' || true)
+
+if [ -z "$modified_flakes" ]; then
+  echo "No service flake.nix files were modified in this PR"
+  exit 1
+fi
+
+echo "Modified flake files:"
+echo "$modified_flakes"
+
+# Process each modified flake file
+for flake in $modified_flakes; do
   if [ ! -f "$flake" ]; then
     continue
   fi
@@ -28,9 +43,34 @@ for flake in services/*/flake.nix; do
   temp_file=$(mktemp)
   cp "$flake" "$temp_file"
   
+  # Get the diff for this file to find which lines changed
+  # We're looking for changes to RawImageReference lines
+  changed_image_refs=$(git diff "origin/$BASE_BRANCH"...HEAD -- "$flake" | \
+    grep -E '^\+.*RawImageReference.*=.*".*@sha256:' | \
+    sed 's/^+//' || true)
+  
+  if [ -z "$changed_image_refs" ]; then
+    echo "No Docker image references were changed in $flake"
+    rm "$temp_file"
+    continue
+  fi
+  
   # Extract all Docker image references from the file
   # Pattern: variableRawImageReference = "image:tag@sha256:digest"
   while IFS= read -r line; do
+    # Check if this specific line was changed in the PR
+    # by comparing against the changed_image_refs we found earlier
+    line_trimmed=$(echo "$line" | sed 's/^[[:space:]]*//')
+    
+    # Check if this image reference was actually changed in the diff
+    if ! echo "$changed_image_refs" | grep -qF "$line_trimmed"; then
+      # This image wasn't changed, skip it
+      continue
+    fi
+    
+    echo ""
+    echo -e "${YELLOW}Processing changed image reference${NC}"
+    
     # Extract the variable name
     var_name=$(echo "$line" | sed -E 's/^[[:space:]]*([a-zA-Z0-9_]+)RawImageReference.*/\1/')
     

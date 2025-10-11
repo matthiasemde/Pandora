@@ -23,6 +23,11 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
+      - name: Fetch base branch
+        run: |
+          git fetch origin \
+            ${{ github.event.pull_request.base.ref }}:refs/remotes/origin/${{ github.event.pull_request.base.ref }}
+
       - name: Install Nix
         uses: cachix/install-nix-action@v27
         with:
@@ -31,6 +36,8 @@ jobs:
 
       - name: Update Docker image hashes
         id: update
+        env:
+          GITHUB_BASE_REF: ${{ github.event.pull_request.base.ref }}
         run: |
           set +e  # Don't exit on error, we want to check the exit code
           ./.github/scripts/update-docker-hashes.sh
