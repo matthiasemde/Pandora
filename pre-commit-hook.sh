@@ -37,7 +37,11 @@ if grep -q "$START_MARKER" README.md && grep -q "$END_MARKER" README.md; then
       in_section=1
       next
     }
-    $0 ~ end { in_section=0 }
+    $0 ~ end { 
+      in_section=0
+      print
+      next
+    }
     !in_section { print }
   ' README.md > "$TEMP_FILE"
 else
