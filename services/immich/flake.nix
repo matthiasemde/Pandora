@@ -29,7 +29,7 @@
             imageName = immichAppImageReference.name;
             imageDigest = immichAppImageReference.digest;
             finalImageTag = immichAppImageReference.tag;
-            sha256 = "sha256-csYMxmPn5cfS6/js+POANFoh8qwbSjt5pTVEFzit5E4=";
+            sha256 = "sha256-+GPEc4qDt8iMwKcw6yeZCuLM/F2LA3/xFFTj+qo22RE=";
           };
 
           immichMLRawImageReference = "ghcr.io/immich-app/immich-machine-learning:v1.144.1@sha256:21b6a0bf02426336f456e8dca43c55b6a79b8e01ee2c25f91bc817fc3a745e52";
