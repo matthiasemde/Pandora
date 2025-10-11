@@ -31,7 +31,7 @@
             imageName = pterodactylPanelImageReference.name;
             imageDigest = pterodactylPanelImageReference.digest;
             finalImageTag = pterodactylPanelImageReference.tag;
-            sha256 = "sha256-7H5ybzd6RzlPsxFZKUp1bmiLfG9Q6we021FW5nQCPk4=";
+            sha256 = "sha256-+K4GKGp1a/QZjZSz4FUeaRRDkAPLe3mcnGupI6RyqLs=";
           };
 
           pterodactylDaemonRawImageReference = "ccarney16/pterodactyl-daemon:v1.11.13@sha256:e0d870157253f9919831372abd687e86b2fce4204fad2957dea38e976692197d";
