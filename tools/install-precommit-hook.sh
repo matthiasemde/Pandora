@@ -4,7 +4,7 @@ set -e
 # Installation script for the pre-commit hook
 # This script copies the pre-commit hook to .git/hooks/ and makes it executable
 
-HOOK_SOURCE="pre-commit-hook.sh"
+HOOK_SOURCE="tools/pre-commit-hook.sh"
 HOOK_DEST=".git/hooks/pre-commit"
 
 echo "🔧 Installing pre-commit hook..."
