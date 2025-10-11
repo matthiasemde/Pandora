@@ -13,6 +13,8 @@ The service consists of three containers:
 
 ### Main Configuration
 - `config/homeserver.yaml`: Main Synapse configuration file
+  - Uses Jinja2 template syntax for environment variable substitution (e.g., `{{ POSTGRES_PASSWORD }}`)
+  - The official Synapse Docker image processes these templates at startup
 - `config/log.config`: Logging configuration
 
 ### Secrets

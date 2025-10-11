@@ -34,7 +34,7 @@ database:
   name: psycopg2
   args:
     user: synapse
-    password: POSTGRES_PASSWORD
+    password: "{{ POSTGRES_PASSWORD }}"
     database: synapse
     host: synapse-db
     port: 5432
@@ -55,14 +55,16 @@ media_store_path: /data/media_store
 max_upload_size: 50M
 
 # Registration settings
-# TODO: Configure registration settings
+# TODO: Configure registration settings based on your needs
 enable_registration: false
 enable_registration_without_verification: false
 
-# Secrets (provided via environment variables managed by agenix)
-# SYNAPSE_REGISTRATION_SHARED_SECRET - for registering users
-# SYNAPSE_MACAROON_SECRET_KEY - for generating access tokens
-# SYNAPSE_FORM_SECRET - for securing forms
+# Registration shared secret for creating users via the admin API
+registration_shared_secret: "{{ SYNAPSE_REGISTRATION_SHARED_SECRET }}"
+
+# Secrets for various cryptographic operations
+macaroon_secret_key: "{{ SYNAPSE_MACAROON_SECRET_KEY }}"
+form_secret: "{{ SYNAPSE_FORM_SECRET }}"
 
 # Rate limiting
 rc_message:
