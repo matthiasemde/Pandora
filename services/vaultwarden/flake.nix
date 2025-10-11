@@ -16,7 +16,7 @@
             imageName = vaultwardenImageReference.name;
             imageDigest = vaultwardenImageReference.digest;
             finalImageTag = vaultwardenImageReference.tag;
-            sha256 = "sha256-85c/SV7bz4mCcu8HOLyJchoscu1bkAIRYMF64lPzTDM=";
+            sha256 = "sha256-vaSs3Ry6TXIYdjmxa5SGxbas8YZJJe87d35456/Dh2A=";
           };
         in
         {
