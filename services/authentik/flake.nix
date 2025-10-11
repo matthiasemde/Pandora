@@ -33,7 +33,7 @@
             imageName = postgresImageReference.name;
             imageDigest = postgresImageReference.digest;
             finalImageTag = postgresImageReference.tag;
-            sha256 = "sha256-neAQQa92onE6d43OqSSpCBmLA1q5Mykydp1mRFiHPHI=";
+            sha256 = "sha256-nfMKArdM+b4I01C6dg9Sp5q5VTdDFsAZlMGYqDb0stc=";
           };
 
           redisRawImageReference = "docker.io/library/redis:8@sha256:b83648c7ab6752e1f52b88ddf5dabc11987132336210d26758f533fb01325865";
