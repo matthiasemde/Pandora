@@ -1,132 +1,183 @@
 # Project Pandora
 This repository holds the configuration of my homelab powered by NixOS
 
+## Directory Structure
+
+The directory structure is automatically updated by a pre-commit hook. See the [Pre-Commit Hook Setup](#pre-commit-hook-setup) section below for installation instructions.
+
+<!-- DIRECTORY_STRUCTURE_START -->
+
 ```
 .
 ├── cert.pem
+├── .editorconfig
 ├── flake.lock
 ├── flake.nix
+├── GEMINI.md
+├── .gitignore
 ├── hosts
-│   └── mahler
-│       ├── configuration.nix
-│       └── hardware-configuration.nix
+│   └── mahler
+│       ├── configuration.nix
+│       └── hardware-configuration.nix
 ├── README.md
+├── renovate.json
 ├── secret-mgmt
-│   ├── add_secret.sh
-│   ├── flake.nix
-│   └── README.md
+│   ├── add_secret.sh
+│   ├── flake.nix
+│   └── README.md
 ├── secrets
-│   ├── host-key.nix.mahler
-│   └── yubi-key.nix.mahler
+│   ├── host-key.nix.mahler
+│   └── yubi-key.nix.mahler
 ├── services
-│   ├── adguard
-│   │   ├── config
-│   │   │   └── AdGuardHome.yaml
-│   │   └── flake.nix
-│   ├── cloudflared
-│   │   ├── config
-│   │   │   └── config.yaml
-│   │   ├── flake.nix
-│   │   └── secrets
-│   ├── firefly
-│   │   ├── flake.nix
-│   │   └── secrets
-│   │       ├── app_key.env.age
-│   │       ├── app_key.env.age.nix
-│   │       ├── gls.json.age
-│   │       └── gls.json.age.nix
-│   ├── frp
-│   │   ├── config
-│   │   │   └── frpc.toml
-│   │   ├── flake.nix
-│   │   └── secrets
-│   │       ├── FRP_TOKEN.env.age
-│   │       └── FRP_TOKEN.env.age.nix
-│   ├── glances
-│   │   └── flake.nix
-│   ├── home-assistant
-│   │   ├── config
-│   │   │   ├── automations.yaml
-│   │   │   ├── configuration.yaml
-│   │   │   ├── scenes.yaml
-│   │   │   └── scripts.yaml
-│   │   └── flake.nix
-│   ├── homepage
-│   │   ├── config
-│   │   │   ├── bookmarks.yaml
-│   │   │   ├── custom.css
-│   │   │   ├── custom.js
-│   │   │   ├── docker.yaml
-│   │   │   ├── services.yaml
-│   │   │   ├── settings.yaml
-│   │   │   └── widgets.yaml
-│   │   ├── flake.nix
-│   │   └── README.md
-│   ├── immich
-│   │   ├── flake.nix
-│   │   └── secrets
-│   │       ├── DB_PASSWORD.env.age
-│   │       ├── DB_PASSWORD.env.age.nix
-│   │       ├── POSTGRES_PASSWORD.env.age
-│   │       └── POSTGRES_PASSWORD.env.age.nix
-│   ├── nas
-│   │   ├── flake.nix
-│   │   └── secrets
-│   │       ├── fileshare-pw.age
-│   │       └── fileshare-pw.age.nix
-│   ├── nextcloud
-│   │   ├── Dockerfile
-│   │   ├── flake.nix
-│   │   ├── README.md
-│   │   ├── secrets
-│   │   │   ├── NEXTCLOUD_ADMIN_PASSWORD.env.age
-│   │   │   ├── NEXTCLOUD_ADMIN_PASSWORD.env.age.nix
-│   │   │   ├── POSTGRES_PASSWORD.env.age
-│   │   │   └── POSTGRES_PASSWORD.env.age.nix
-│   │   └── supervisord.conf
-│   ├── paperless
-│   │   ├── flake.nix
-│   │   └── secrets
-│   │       ├── PAPERLESS_SECRET_KEY.env.age
-│   │       ├── PAPERLESS_SECRET_KEY.env.age.nix
-│   │       ├── smtp-credentials.env.age
-│   │       └── smtp-credentials.env.age.nix
-│   ├── pterodactyl
-│   │   ├── config
-│   │   │   └── conf.d
-│   │   │       └── letsencrypt
-│   │   ├── flake.nix
-│   │   ├── panel-image
-│   │   └── secrets
-│   │       ├── db_credentials.env.age
-│   │       ├── db_credentials.env.age.nix
-│   │       ├── smtp_credentials.env.age
-│   │       └── smtp_credentials.env.age.nix
-│   ├── radicale
-│   │   ├── config
-│   │   │   └── config
-│   │   ├── flake.nix
-│   │   ├── README.md
-│   │   └── users
-│   ├── traefik
-│   │   ├── config
-│   │   │   ├── error.html
-│   │   │   ├── nginx.conf
-│   │   │   └── traefik.toml
-│   │   ├── flake.nix
-│   │   └── secrets
-│   │       ├── cf-token.env.age
-│   │       └── cf-token.env.age.nix
-│   ├── vaultwarden
-│   │   ├── flake.nix
-│   │   └── secrets
-│   │       ├── ADMIN_TOKEN.env.age
-│   │       ├── ADMIN_TOKEN.env.age.nix
-│   │       ├── smtp-credentials.env.age
-│   │       └── smtp-credentials.env.age.nix
-│   └── vscode-server
-│       └── flake.nix
+│   ├── adguard
+│   │   ├── config
+│   │   │   └── AdGuardHome.yaml
+│   │   └── flake.nix
+│   ├── authentik
+│   │   ├── flake.nix
+│   │   └── secrets
+│   │       ├── AUTHENTIK_SECRET_KEY.env.age
+│   │       ├── AUTHENTIK_SECRET_KEY.env.age.nix
+│   │       ├── db-credentials.env.age
+│   │       ├── db-credentials.env.age.nix
+│   │       ├── smtp-credentials.env.age
+│   │       └── smtp-credentials.env.age.nix
+│   ├── cloudflared
+│   │   ├── config
+│   │   │   └── config.yaml
+│   │   ├── flake.nix
+│   │   └── secrets
+│   │       ├── .env.age
+│   │       └── .env.age.nix
+│   ├── firefly
+│   │   ├── flake.nix
+│   │   └── secrets
+│   │       ├── app_key.env.age
+│   │       ├── app_key.env.age.nix
+│   │       ├── gls.json.age
+│   │       ├── gls.json.age.nix
+│   │       ├── gls-tagesgeldkonto.json.age
+│   │       └── gls-tagesgeldkonto.json.age.nix
+│   ├── frp
+│   │   ├── config
+│   │   │   └── frpc.toml
+│   │   ├── .env
+│   │   ├── flake.nix
+│   │   └── secrets
+│   │       ├── FRP_TOKEN.env.age
+│   │       └── FRP_TOKEN.env.age.nix
+│   ├── glances
+│   │   └── flake.nix
+│   ├── home-assistant
+│   │   ├── config
+│   │   │   ├── automations.yaml
+│   │   │   ├── configuration.yaml
+│   │   │   ├── scenes.yaml
+│   │   │   └── scripts.yaml
+│   │   └── flake.nix
+│   ├── homepage
+│   │   ├── config
+│   │   │   ├── bookmarks.yaml
+│   │   │   ├── custom.css
+│   │   │   ├── custom.js
+│   │   │   ├── docker.yaml
+│   │   │   ├── services.yaml
+│   │   │   ├── settings.yaml
+│   │   │   └── widgets.yaml
+│   │   ├── flake.nix
+│   │   └── README.md
+│   ├── immich
+│   │   ├── flake.nix
+│   │   └── secrets
+│   │       ├── DB_PASSWORD.env.age
+│   │       ├── DB_PASSWORD.env.age.nix
+│   │       ├── POSTGRES_PASSWORD.env.age
+│   │       └── POSTGRES_PASSWORD.env.age.nix
+│   ├── kopia
+│   │   ├── create_repository.sh
+│   │   ├── flake.nix
+│   │   ├── README.md
+│   │   └── secrets
+│   │       ├── KOPIA_PASSWORD.env.age
+│   │       ├── KOPIA_PASSWORD.env.age.nix
+│   │       ├── KOPIA_SERVER_CONTROL_CREDENTIALS.env.age
+│   │       ├── KOPIA_SERVER_CONTROL_CREDENTIALS.env.age.nix
+│   │       ├── KOPIA_SERVER_CREDENTIALS.env.age
+│   │       └── KOPIA_SERVER_CREDENTIALS.env.age.nix
+│   ├── nas
+│   │   ├── flake.nix
+│   │   └── secrets
+│   │       ├── fileshare-pw.age
+│   │       └── fileshare-pw.age.nix
+│   ├── nextcloud
+│   │   ├── Dockerfile
+│   │   ├── flake.nix
+│   │   ├── README.md
+│   │   ├── secrets
+│   │   │   ├── NEXTCLOUD_ADMIN_PASSWORD.env.age
+│   │   │   ├── NEXTCLOUD_ADMIN_PASSWORD.env.age.nix
+│   │   │   ├── POSTGRES_PASSWORD.env.age
+│   │   │   └── POSTGRES_PASSWORD.env.age.nix
+│   │   └── supervisord.conf
+│   ├── paperless
+│   │   ├── flake.nix
+│   │   └── secrets
+│   │       ├── PAPERLESS_SECRET_KEY.env.age
+│   │       ├── PAPERLESS_SECRET_KEY.env.age.nix
+│   │       ├── smtp-credentials.env.age
+│   │       └── smtp-credentials.env.age.nix
+│   ├── pterodactyl
+│   │   ├── config
+│   │   │   └── conf.d
+│   │   │       └── letsencrypt
+│   │   ├── flake.nix
+│   │   ├── panel-image
+│   │   └── secrets
+│   │       ├── db_credentials.env.age
+│   │       ├── db_credentials.env.age.nix
+│   │       ├── smtp_credentials.env.age
+│   │       └── smtp_credentials.env.age.nix
+│   ├── radicale
+│   │   ├── config
+│   │   │   └── config
+│   │   ├── flake.nix
+│   │   ├── README.md
+│   │   └── users
+│   ├── traefik
+│   │   ├── config
+│   │   │   ├── error.html
+│   │   │   ├── nginx.conf
+│   │   │   └── traefik.toml
+│   │   ├── flake.nix
+│   │   └── secrets
+│   │       ├── cf-token.env.age
+│   │       └── cf-token.env.age.nix
+│   ├── vaultwarden
+│   │   ├── flake.nix
+│   │   └── secrets
+│   │       ├── ADMIN_TOKEN.env.age
+│   │       ├── ADMIN_TOKEN.env.age.nix
+│   │       ├── smtp-credentials.env.age
+│   │       └── smtp-credentials.env.age.nix
+│   └── vscode-server
+│       └── flake.nix
 ├── SETUP.md
+├── tools
+│   ├── install-precommit-hook.sh
+│   └── pre-commit-hook.sh
 └── virtualization
     └── flake.nix
+
+49 directories, 110 files
 ```
+
+<!-- DIRECTORY_STRUCTURE_END -->
+
+## Pre-Commit Hook Setup
+
+This repository includes a pre-commit hook that automatically updates the directory structure in this README. To install, run:
+
+```bash
+./tools/install-precommit-hook.sh
+```
+
