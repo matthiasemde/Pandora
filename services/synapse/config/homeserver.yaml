@@ -1,0 +1,148 @@
+# Configuration file for Matrix Synapse
+# Reference: https://matrix-org.github.io/synapse/latest/usage/configuration/config_documentation.html
+
+server_name: "mahler.local"
+pid_file: /data/homeserver.pid
+
+# The public-facing base URL that clients use to access this Homeserver
+public_baseurl: https://matrix.mahler.local
+
+# Listener configuration
+listeners:
+  # Client API
+  - port: 8008
+    tls: false
+    type: http
+    x_forwarded: true
+    bind_addresses: ['0.0.0.0']
+    resources:
+      - names: [client, federation]
+        compress: false
+
+  # Federation API (optional, can share with client API)
+  - port: 8448
+    tls: false
+    type: http
+    x_forwarded: true
+    bind_addresses: ['0.0.0.0']
+    resources:
+      - names: [federation]
+        compress: false
+
+# Database configuration
+database:
+  name: psycopg2
+  args:
+    user: synapse
+    password: POSTGRES_PASSWORD
+    database: synapse
+    host: synapse-db
+    port: 5432
+    cp_min: 5
+    cp_max: 10
+
+# Redis configuration for replication and caching
+redis:
+  enabled: true
+  host: synapse-redis
+  port: 6379
+
+# Logging configuration
+log_config: "/data/log.config"
+
+# Media storage
+media_store_path: /data/media_store
+max_upload_size: 50M
+
+# Registration settings
+# TODO: Configure registration settings
+enable_registration: false
+enable_registration_without_verification: false
+
+# Secrets (provided via environment variables managed by agenix)
+# SYNAPSE_REGISTRATION_SHARED_SECRET - for registering users
+# SYNAPSE_MACAROON_SECRET_KEY - for generating access tokens
+# SYNAPSE_FORM_SECRET - for securing forms
+
+# Rate limiting
+rc_message:
+  per_second: 0.2
+  burst_count: 10
+
+rc_registration:
+  per_second: 0.17
+  burst_count: 3
+
+rc_login:
+  address:
+    per_second: 0.17
+    burst_count: 3
+  account:
+    per_second: 0.17
+    burst_count: 3
+  failed_attempts:
+    per_second: 0.17
+    burst_count: 3
+
+# URL preview settings
+url_preview_enabled: true
+url_preview_ip_range_blacklist:
+  - '127.0.0.0/8'
+  - '10.0.0.0/8'
+  - '172.16.0.0/12'
+  - '192.168.0.0/16'
+  - '100.64.0.0/10'
+  - '169.254.0.0/16'
+  - '::1/128'
+  - 'fe80::/64'
+  - 'fc00::/7'
+
+max_spider_size: 10M
+
+# Signing Keys (auto-generated on first run)
+signing_key_path: "/data/keys/signing.key"
+
+# Trusted key servers for federation
+trusted_key_servers:
+  - server_name: "matrix.org"
+
+# Enable metrics for monitoring (optional)
+enable_metrics: false
+
+# TODO: Configure SMTP for email notifications
+# email:
+#   smtp_host: "smtp.example.com"
+#   smtp_port: 587
+#   smtp_user: "synapse"
+#   smtp_pass: "password"
+#   notif_from: "Matrix <matrix@mahler.local>"
+
+# TODO: Configure TURN server for VoIP (optional)
+# turn_uris: []
+# turn_shared_secret: ""
+# turn_user_lifetime: 86400000
+
+# Presence settings
+presence:
+  enabled: true
+
+# Push notification settings
+push:
+  include_content: true
+
+# Federation settings
+federation_domain_whitelist: []
+# federation_ip_range_blacklist: []
+
+# User directory settings
+user_directory:
+  enabled: true
+  search_all_users: false
+
+# Retention settings
+# TODO: Configure message retention policies if needed
+# retention:
+#   enabled: true
+#   default_policy:
+#     min_lifetime: 1d
+#     max_lifetime: 1y
