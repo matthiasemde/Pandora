@@ -29,6 +29,7 @@
     pterodactyl.url = "path:./services/pterodactyl";
     kopia.url = "path:./services/kopia";
     authentik.url = "path:./services/authentik";
+    synapse.url = "path:./services/synapse";
   };
 
   outputs =
@@ -56,6 +57,7 @@
       pterodactyl,
       kopia,
       authentik,
+      synapse,
       ...
     }:
     {
@@ -97,6 +99,7 @@
             pterodactyl
             kopia
             authentik
+            synapse
           ];
           getServiceEnvFiles = secret-mgmt.lib.getServiceEnvFiles;
           getServiceSecrets = secret-mgmt.lib.getServiceSecrets;
