@@ -40,7 +40,7 @@
             imageName = pterodactylDaemonImageReference.name;
             imageDigest = pterodactylDaemonImageReference.digest;
             finalImageTag = pterodactylDaemonImageReference.tag;
-            sha256 = "sha256-qIHlP9PHfO4aHgP+JyFm9mIxdT1pAM8Ep1XtyaDz+oU=";
+            sha256 = "sha256-YUn6r/faxpYuYKOxJXBnMGpo5CYaa6Swykiw/tEIh+E=";
           };
 
           mariadbRawImageReference = "mariadb:12.0.2@sha256:5b6a1eac15b85b981a61afb89aea2a22bf76b5f58809d05f0bcc13ab6ec44cb8";
