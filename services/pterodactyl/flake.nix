@@ -25,7 +25,7 @@
         let
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
-          pterodactylPanelRawImageReference = "ccarney16/pterodactyl-panel:v1.11.11@sha256:9bcf170fb6dfd40665e825cb37bc1532e9ab4828868a5e9af3c08ac7f8a4840d";
+          pterodactylPanelRawImageReference = "ccarney16/pterodactyl-panel:v1.11.11@sha256:e3fb36960e7bcfdb920888633a0fe423f643e939c73e6feca6584940a54023db";
           pterodactylPanelImageReference = parseDockerImageReference pterodactylPanelRawImageReference;
           pterodactylPanelImage = pkgs.dockerTools.pullImage {
             imageName = pterodactylPanelImageReference.name;
