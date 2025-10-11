@@ -56,6 +56,12 @@ fi
 
 echo ""
 echo "The hook will run automatically on each commit."
+echo "If the directory structure changes, the hook will:"
+echo "  1. Update README.md with the new structure"
+echo "  2. Stage the updated README.md"
+echo "  3. Abort the commit with a message to commit again"
+echo ""
+echo "This ensures the updated README.md is included in your commit."
 echo "To temporarily skip the hook, use: git commit --no-verify"
 
 exit 0
