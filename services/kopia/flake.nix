@@ -15,7 +15,7 @@
         let
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
-          kopiaRawImageReference = "kopia/kopia:0.21.1@sha256:c594f95b4c0888f51a89339f746db45e141d6b65567814f592955368e575da55";
+          kopiaRawImageReference = "kopia/kopia:20251008.0.52618@sha256:c89a38ee87b1894b3f8b54cad308cc598001a2d4494379c9e2da6aedbc55cfd1";
           kopiaImageReference = parseDockerImageReference kopiaRawImageReference;
           kopiaImage = pkgs.dockerTools.pullImage {
             imageName = kopiaImageReference.name;
