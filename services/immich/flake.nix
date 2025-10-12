@@ -56,7 +56,7 @@
             imageName = immichDatabaseImageReference.name;
             imageDigest = immichDatabaseImageReference.digest;
             finalImageTag = immichDatabaseImageReference.tag;
-            sha256 = "sha256-kEW12MDS2g1naTj4NZCUuEiuP39zEZXeuvTqIcJHZYs=";
+            sha256 = "sha256-ncgVTBG0lwUr3x+yyXv3Exxrv/z89yUXa9xdYOQlU5Y=";
           };
         in
         {
