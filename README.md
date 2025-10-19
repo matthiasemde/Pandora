@@ -149,6 +149,8 @@ This repository holds the configuration of my homelab powered by NixOS
 │   │   └── secrets
 │   │       ├── cf-token.env.age
 │   │       └── cf-token.env.age.nix
+│   ├── uptime-kuma
+│   │   └── flake.nix
 │   ├── vaultwarden
 │   │   ├── flake.nix
 │   │   └── secrets
@@ -165,7 +167,7 @@ This repository holds the configuration of my homelab powered by NixOS
 └── virtualization
     └── flake.nix
 
-47 directories, 114 files
+48 directories, 115 files
 ```
 
 <!-- DIRECTORY_STRUCTURE_END -->
