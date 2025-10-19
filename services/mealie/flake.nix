@@ -39,7 +39,7 @@
             imageName = postgresImageReference.name;
             imageDigest = postgresImageReference.digest;
             finalImageTag = postgresImageReference.tag;
-            sha256 = "sha256-oG5Do29b4CSok3H6mSk/xYiHeyJd4XJShwdkgO3A6D0=";
+            sha256 = "sha256-zH0xxBUum8w4fpGFV6r76jI7ayJuXC8G0qY1Dm26opU=";
           };
         in
         {
