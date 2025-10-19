@@ -114,6 +114,26 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
+  # Enable Prometheus Node Exporter for system metrics
+  services.prometheus.exporters.node = {
+    enable = true;
+    port = 9100;
+    enabledCollectors = [
+      "systemd"
+      "textfile"
+      "filesystem"
+      "loadavg"
+      "meminfo"
+      "netdev"
+      "stat"
+      "time"
+      "vmstat"
+      "logind"
+      "interrupts"
+      "ksmd"
+    ];
+  };
+
   # Open ports in the firewall.
   networking = {
     nameservers = [
@@ -131,7 +151,10 @@
     };
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 53 ]; # Allow TCP DNS
+      allowedTCPPorts = [ 
+        53    # Allow TCP DNS
+        9100  # Prometheus Node Exporter
+      ];
       allowedUDPPorts = [ 53 ]; # Allow UDP DNS
     };
   };
