@@ -103,6 +103,8 @@ This repository holds the configuration of my homelab powered by NixOS
 │   │       ├── authentik-credentials.env.age.nix
 │   │       ├── db-credentials.env.age
 │   │       ├── db-credentials.env.age.nix
+│   │       ├── openai-credentials.env.age
+│   │       ├── openai-credentials.env.age.nix
 │   │       ├── smtp-credentials.env.age
 │   │       └── smtp-credentials.env.age.nix
 │   ├── nas
@@ -167,7 +169,7 @@ This repository holds the configuration of my homelab powered by NixOS
 └── virtualization
     └── flake.nix
 
-48 directories, 115 files
+48 directories, 117 files
 ```
 
 <!-- DIRECTORY_STRUCTURE_END -->

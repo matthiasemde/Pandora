@@ -30,7 +30,7 @@
             imageName = mealieImageReference.name;
             imageDigest = mealieImageReference.digest;
             finalImageTag = mealieImageReference.tag;
-            sha256 = "sha256-BrfLmNzq1vDF3rw341LNmxepWqHhC3jXYDlKY96oYcE=";
+            sha256 = "sha256-4TZDeE7moTDYMlWIlYWxrKuJhr9ZCKzGTLTaLaNF2hQ=";
           };
 
           postgresRawImageReference = "postgres:15@sha256:22d83dee85fd73ffa34e5b19d192184bad1fbc6b960aca3df4d31ac464532dab";
@@ -50,7 +50,8 @@
             environment = {
               # Base URL
               "BASE_URL" = "https://mealie.${domain}";
-
+              "DEFAULT_GROUP" = "Default";
+              "DEFAULT_HOUSEHOLD" = "Default";
               # User/Group Settings
               "PUID" = "1000";
               "PGID" = "1000";
