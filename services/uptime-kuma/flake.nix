@@ -27,7 +27,7 @@
             imageName = uptimeKumaImageReference.name;
             imageDigest = uptimeKumaImageReference.digest;
             finalImageTag = uptimeKumaImageReference.tag;
-            sha256 = "sha256-iRN4zpu20EZMK9q2ojsPmG5MCOyum7+Sb6kJVn5wO48=";
+            sha256 = "sha256-oYw3Vdu7lc1KNN3oXAS8WR9Lj64gGogZVmO61naQTV0=";
           };
         in
         {
