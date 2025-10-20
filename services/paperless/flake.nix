@@ -46,7 +46,6 @@
           paperless-app = {
             image = paperlessImageReference.name + ":" + paperlessImageReference.tag;
             imageFile = paperlessImage;
-            extraOptions = [ "--dns=1.1.1.1" ];
             environment = {
               "PAPERLESS_URL" = "https://paperless.${domain}";
               "PAPERLESS_ACCOUNT_ALLOW_SIGNUPS" = "false";
@@ -87,6 +86,8 @@
               "PAPERLESS_AUTO_LOGIN" = "true";
               "PAPERLESS_AUTO_CREATE" = "true";
               "PAPERLESS_LOGOUT_REDIRECT_URL" = "https://auth.emdecloud.de/application/o/paperless/end-session/";
+              "PAPERLESS_DISABLE_REGULAR_LOGIN" = "true";
+              "PAPERLESS_REDIRECT_LOGIN_TO_SSO" = "true";
             };
             environmentFiles = getServiceEnvFiles "paperless";
             volumes = [
