@@ -21,7 +21,7 @@
         let
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
-          uptimeKumaRawImageReference = "louislam/uptime-kuma:1.23.16@sha256:b4c3a4d186b4612b3a7bbb39c56a634626276615c21871c837a86e4a43d8e047";
+          uptimeKumaRawImageReference = "louislam/uptime-kuma:1.23.17@sha256:0e192c54160b6e3a799dd1ebf4178430fc630a41cd1b6889a148e0e472494a55";
           uptimeKumaImageReference = parseDockerImageReference uptimeKumaRawImageReference;
           uptimeKumaImage = pkgs.dockerTools.pullImage {
             imageName = uptimeKumaImageReference.name;
