@@ -30,7 +30,7 @@
             imageName = immichAppImageReference.name;
             imageDigest = immichAppImageReference.digest;
             finalImageTag = immichAppImageReference.tag;
-            sha256 = "sha256-+GPEc4qDt8iMwKcw6yeZCuLM/F2LA3/xFFTj+qo22RE=";
+            sha256 = "sha256-MQGtOsgDLT/qo5gFjt5foD50OymGEgHTyXjzu+Verv4=";
           };
 
           immichMLRawImageReference = "ghcr.io/immich-app/immich-machine-learning:v2.1.0@sha256:24bfef29bc5c0923c64c98810931eda1449a4b237e6704a715605761bc107ae4";
@@ -39,7 +39,7 @@
             imageName = immichMLImageReference.name;
             imageDigest = immichMLImageReference.digest;
             finalImageTag = immichMLImageReference.tag;
-            sha256 = "sha256-S7yNuTrPAbI8Qcx+x9PVElQVjDkEqHquVlzNivgEZPM=";
+            sha256 = "sha256-wIAgu4WOm7K8kvo9Um8TLke4Eenm01f4QO8RtwuofvU=";
           };
 
           immichRedisRawImageReference = "docker.io/valkey/valkey:8-bookworm@sha256:fec42f399876eb6faf9e008570597741c87ff7662a54185593e74b09ce83d177";
@@ -51,20 +51,19 @@
             sha256 = "sha256-pRgJXPCztxizPzsRTPvBbNAxLC4XXBtIMKtz3joyLPk=";
           };
 
-          immichDatabaseRawImageReference = "ghcr.io/immich-app/postgres:14-vectorchord0.4.3-pgvectors0.2.0@sha256:41eacbe83eca995561fe43814fd4891e16e39632806253848efaf04d3c8a8b84";
+          immichDatabaseRawImageReference = "ghcr.io/immich-app/postgres:16-vectorchord0.4.3-pgvectors0.2.0@sha256:1a078b237c1d9b420b0ee59147386b4aa60d3a07a8e6a402fc84a57e41b043a4";
           immichDatabaseImageReference = parseDockerImageReference immichDatabaseRawImageReference;
           immichDatabaseImage = pkgs.dockerTools.pullImage {
             imageName = immichDatabaseImageReference.name;
             imageDigest = immichDatabaseImageReference.digest;
             finalImageTag = immichDatabaseImageReference.tag;
-            sha256 = "sha256-kEW12MDS2g1naTj4NZCUuEiuP39zEZXeuvTqIcJHZYs=";
+            sha256 = "sha256-ncgVTBG0lwUr3x+yyXv3Exxrv/z89yUXa9xdYOQlU5Y=";
           };
         in
         {
           immich-app = {
             image = immichAppImageReference.name + ":" + immichAppImageReference.tag;
             imageFile = immichAppImage;
-            extraOptions = [ "--dns=1.1.1.1" ];
             volumes = [
               "/etc/localtime:/etc/localtime:ro"
               "/data/services/immich/upload:/usr/src/app/upload"

@@ -29,6 +29,8 @@
     kopia.url = "path:./services/kopia";
     authentik.url = "path:./services/authentik";
     mealie.url = "path:./services/mealie";
+    uptime-kuma.url = "path:./services/uptime-kuma";
+    grafana.url = "path:./services/grafana";
   };
 
   outputs =
@@ -56,6 +58,8 @@
       kopia,
       authentik,
       mealie,
+      uptime-kuma,
+      grafana,
       ...
     }:
     {
@@ -98,6 +102,8 @@
             kopia
             authentik
             mealie
+            uptime-kuma
+            grafana
           ];
           getServiceEnvFiles = secret-mgmt.lib.getServiceEnvFiles;
           getServiceSecrets = secret-mgmt.lib.getServiceSecrets;

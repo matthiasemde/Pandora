@@ -99,7 +99,7 @@
     enable = true;
   };
 
-  services.udev.packages = [pkgs.yubikey-personalization];
+  services.udev.packages = [ pkgs.yubikey-personalization ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -114,35 +114,41 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
+  # Enable Prometheus Node Exporter for system metrics
+  services.prometheus.exporters.node = {
+    enable = true;
+    port = 9100;
+    enabledCollectors = [
+      "systemd"
+      "textfile"
+      "filesystem"
+      "loadavg"
+      "meminfo"
+      "netdev"
+      "stat"
+      "time"
+      "vmstat"
+      "logind"
+      "interrupts"
+      "ksmd"
+    ];
+  };
+
   # Open ports in the firewall.
   networking = {
-    nameservers = [
-      "1.1.1.1"
-      "8.8.8.8"
-    ];
-    interfaces.enp106s0f3u2 = {
-      useDHCP = false;
-      ipv4.addresses = [
-        {
-          address = "192.168.178.100";
-          prefixLength = 24;
-        }
-      ];
-    };
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 53 ]; # Allow TCP DNS
+      allowedTCPPorts = [ 
+        53    # Allow TCP DNS
+        9100  # Prometheus Node Exporter
+      ];
       allowedUDPPorts = [ 53 ]; # Allow UDP DNS
     };
   };
 
-  # enable systemd-resolved
-  services.resolved.enable = true;
-
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  environment.etc = {
+    "resolv.conf".text = "nameserver 192.168.178.1\n";
+  };
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
