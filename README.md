@@ -152,6 +152,24 @@ This repository holds the configuration of my homelab powered by NixOS
 │   │   ├── flake.nix
 │   │   ├── README.md
 │   │   └── users
+│   ├── synapse
+│   │   ├── config
+│   │   │   ├── homeserver.yaml.j2
+│   │   │   └── log.config
+│   │   ├── entrypoint.sh
+│   │   ├── flake.nix
+│   │   ├── README.md
+│   │   ├── render-config.py
+│   │   └── secrets
+│   │       ├── app-credentials.env.age
+│   │       ├── app-credentials.env.age.nix
+│   │       ├── authentik-credentials.env.age
+│   │       ├── authentik-credentials.env.age.nix
+│   │       ├── database-credentials.env.age
+│   │       ├── database-credentials.env.age.nix
+│   │       ├── homeserver.yaml.age.nix
+│   │       ├── smtp-credentials.env.age
+│   │       └── smtp-credentials.env.age.nix
 │   ├── traefik
 │   │   ├── config
 │   │   │   ├── error.html
@@ -180,7 +198,7 @@ This repository holds the configuration of my homelab powered by NixOS
 └── virtualization
     └── flake.nix
 
-51 directories, 125 files
+54 directories, 140 files
 ```
 
 <!-- DIRECTORY_STRUCTURE_END -->
