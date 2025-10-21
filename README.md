@@ -155,7 +155,8 @@ This repository holds the configuration of my homelab powered by NixOS
 │   ├── synapse
 │   │   ├── config
 │   │   │   ├── homeserver.yaml.j2
-│   │   │   └── log.config
+│   │   │   ├── log.config
+│   │   │   └── synapse-admin-config.json
 │   │   ├── entrypoint.sh
 │   │   ├── flake.nix
 │   │   ├── README.md
@@ -198,7 +199,7 @@ This repository holds the configuration of my homelab powered by NixOS
 └── virtualization
     └── flake.nix
 
-54 directories, 140 files
+54 directories, 141 files
 ```
 
 <!-- DIRECTORY_STRUCTURE_END -->

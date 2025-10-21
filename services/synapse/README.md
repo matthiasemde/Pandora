@@ -1,21 +1,24 @@
 # Matrix Synapse Service
 
-This directory contains the NixOS configuration for the Matrix Synapse homeserver.
+This directory contains the NixOS configuration for the Matrix Synapse homeserver with admin interface.
 
 ## Architecture
 
-The service consists of three containers:
+The service consists of four containers:
 - **synapse-app**: The main Matrix Synapse server
 - **synapse-database**: PostgreSQL database for persistent storage
 - **synapse-redis**: Redis for caching and replication
+- **synapse-admin**: Web-based admin interface for managing the homeserver
 
 ## Configuration
 
 ### Main Configuration
-- `config/homeserver.yaml`: Main Synapse configuration file
+- `config/homeserver.yaml.j2`: Main Synapse configuration file
   - Uses Jinja2 template syntax for environment variable substitution (e.g., `{{ POSTGRES_PASSWORD }}`)
   - The official Synapse Docker image processes these templates at startup
-- `config/log.config`: Logging configuration
+  - **Enhanced**: Now includes Authentik group-based admin role mapping
+- `config/log.config`: Logging configuration  
+- `config/synapse-admin-config.json`: Configuration for the Synapse Admin web interface
 
 ### Secrets
 The following secrets need to be generated and encrypted using agenix in the `services/synapse/secrets/` directory:
@@ -29,16 +32,56 @@ The following secrets need to be generated and encrypted using agenix in the `se
 
 ## Traefik Integration
 
-The service is configured to be accessible at:
-- **Client API**: `https://matrix.<domain>` (port 8008)
-- **Local access**: `https://matrix.<host>.local` (port 8008)
+The service is configured with **enhanced security routing** following Synapse documentation best practices:
+
+### Matrix Server Routes
+- **Public Client API**: `https://matrix.<domain>` - Restricted to `/_matrix` and `/_synapse/client` paths only
+- **Admin API**: `https://matrix.<domain>/_synapse/admin` - Accessible for administration (requires authentication)
+- **Federation**: `https://matrix.<domain>:8448` - Full Matrix federation (port 8448)
+- **Local Access**: `https://matrix.<host>.local` - Full access for local administration
+
+### Synapse Admin Interface  
+- **Public Access**: `https://synapse-admin.<domain>` - Web-based admin interface
+- **Local Access**: `https://synapse-admin.<host>.local` - Direct local access
+
+This configuration follows the [Synapse reverse proxy documentation](https://element-hq.github.io/synapse/latest/reverse_proxy.html) which recommends only exposing `/_matrix` and `/_synapse/client` endpoints publicly, while keeping `/_synapse/admin` accessible but secured.
 
 ## Authentik SSO Integration
 
-The service is configured with Authentik OIDC provider for single sign-on:
+The service is configured with **enhanced Authentik OIDC integration**:
 - **Provider URL**: `https://auth.<domain>/application/o/matrix/`
-- **Scopes**: openid, profile, email
+- **Scopes**: openid, profile, email, **groups** (new)
 - **User mapping**: Maps Authentik username, display name, and email
+- **Admin Role Mapping**: Users in the `matrix-admin` Authentik group automatically receive Synapse admin privileges
+
+### Setting Up Admin Users via Authentik
+1. In Authentik, create a group named `matrix-admin`
+2. Add users to this group who should have Matrix server admin privileges
+3. Users will automatically receive admin access when they log in via SSO
+
+## Synapse Admin Interface
+
+The service includes [Synapse Admin](https://github.com/etkecc/synapse-admin), a feature-rich web interface for managing your Matrix homeserver:
+
+### Features
+- **User Management**: Create, modify, deactivate users and manage their settings
+- **Room Management**: View, modify, and delete rooms; manage room members and settings
+- **Media Management**: View and delete media files, manage storage
+- **Federation**: Monitor and manage federation with other Matrix servers
+- **Server Statistics**: View detailed server metrics and statistics
+- **Registration Tokens**: Manage user registration
+- **Reports**: Handle abuse reports and moderation
+
+### Access
+- **Web Interface**: Available at `https://synapse-admin.<domain>`
+- **Authentication**: Uses your Synapse server credentials (supports SSO via Authentik)
+- **Admin Requirements**: Only Matrix server administrators can access the interface
+
+### Configuration
+The admin interface is pre-configured to:
+- Connect only to your homeserver (`restrictBaseUrl`)
+- Include custom menu items for Matrix resources
+- Protect system users from accidental modification
 
 ## Data Storage
 

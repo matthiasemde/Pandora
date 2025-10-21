@@ -22,10 +22,22 @@
               port,
               passthrough ? false,
               isPublic ? true,
+              allowedPaths ? null,
             }:
             let
               localRule = "Host(`${name}.${hostname}.local`)";
-              publicRule = "Host(`${name}.${domain}`)";
+
+              # Build path rules from allowedPaths array
+              pathRules = if allowedPaths != null then
+                let
+                  pathConditions = map (path: "PathPrefix(`${path}`)") allowedPaths;
+                  pathString = lib.concatStringsSep " || " pathConditions;
+                in
+                " && (${pathString})"
+              else
+                "";
+
+              publicRule = "Host(`${name}.${domain}`)${pathRules}";
               publicTcpRule = "HostSNI(`${name}.${domain}`)";
 
               local = {

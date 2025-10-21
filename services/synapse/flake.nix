@@ -15,6 +15,7 @@
       };
       containers =
         {
+          hostname,
           domain,
           mkTraefikLabels,
           getServiceEnvFiles,
@@ -49,6 +50,24 @@
             imageDigest = redisImageReference.digest;
             finalImageTag = redisImageReference.tag;
             sha256 = "sha256-CXa5elUnGSjjqWhPDs+vlIuLr/7XLcM19zkQPijjUrY=";
+          };
+
+          synapseAdminRawImageReference = "ghcr.io/etkecc/synapse-admin:v0.11.1-etke48@sha256:b0d794c33eaa862bfe968ffb02ab82747f1218e5f259568c40cbfff9dc07bf8c";
+          synapseAdminImageReference = parseDockerImageReference synapseAdminRawImageReference;
+          synapseAdminImage = pkgs.dockerTools.pullImage {
+            imageName = synapseAdminImageReference.name;
+            imageDigest = synapseAdminImageReference.digest;
+            finalImageTag = synapseAdminImageReference.tag;
+            sha256 = "sha256-5r22gCLJxgSNNasvXcFNc1Jc31oFzsuLcplE+4HuUaQ=";
+          };
+
+          nginxRawImageReference = "nginx:1.29.2-alpine@sha256:7c1b9a91514d1eb5288d7cd6e91d9f451707911bfaea9307a3acbc811d4aa82e";
+          nginxImageReference = parseDockerImageReference nginxRawImageReference;
+          nginxImage = pkgs.dockerTools.pullImage {
+            imageName = nginxImageReference.name;
+            imageDigest = nginxImageReference.digest;
+            finalImageTag = nginxImageReference.tag;
+            sha256 = "sha256-EHUeHY55q4il4qhIxcOrrop/ofyCsbfY68x1zeRnGFM=";
           };
         in
         {
@@ -113,9 +132,13 @@
               (mkTraefikLabels {
                 name = "matrix";
                 port = "8008";
+                allowedPaths = [
+                  "/_matrix"
+                  "/_synapse/client"
+                ];
               })
               // {
-                # --- Public federatior router ---
+                # --- Public federation router ---
                 "traefik.http.routers.matrix-federation.entrypoints" = "federation";
                 "traefik.http.routers.matrix-federation.rule" = "Host(`matrix.${domain}`)";
                 "traefik.http.routers.matrix-federation.tls.certresolver" = "myresolver";
@@ -123,11 +146,62 @@
                 "traefik.http.routers.matrix-federation.service" = "matrix";
 
                 # 🏠 Homepage integration
-                "homepage.group" = "Communication";
+                "homepage.group" = "Media";
                 "homepage.name" = "Matrix Synapse";
                 "homepage.icon" = "matrix";
                 "homepage.href" = "https://matrix.${domain}";
                 "homepage.description" = "Matrix homeserver";
+              };
+          };
+
+          synapse-wellknown =
+            let
+              wellknownFile = pkgs.writeTextFile {
+                name = "matrix-wellknown-server";
+                text = "{ \"m.server\": \"matrix.${domain}:443\" }";
+              };
+            in
+            {
+              image = nginxImageReference.name + ":" + nginxImageReference.tag;
+              imageFile = nginxImage;
+              networks = [
+                "traefik"
+              ];
+              volumes = [ "${wellknownFile}:/usr/share/nginx/html/.well-known/matrix/server:ro" ];
+              labels = {
+                "traefik.enable" = "true";
+                "traefik.http.routers.matrix-wellknown.rule" =
+                  "Host(`${domain}`) && PathPrefix(`/.well-known/matrix/server`)";
+                "traefik.http.routers.matrix-wellknown.entrypoints" = "websecure";
+                "traefik.http.routers.matrix-wellknown.tls.certresolver" = "myresolver";
+                "traefik.http.routers.matrix-wellknown.tls.domains[0].main" = domain;
+                "traefik.http.services.matrix-wellknown.loadbalancer.server.port" = "80";
+              };
+            };
+
+          synapse-admin = {
+            image = synapseAdminImageReference.name + ":" + synapseAdminImageReference.tag;
+            imageFile = synapseAdminImage;
+            volumes = [
+              "${./config/synapse-admin-config.json}:/app/config.json:ro"
+            ];
+            networks = [
+              "traefik"
+              backendNetwork
+            ];
+            labels =
+              (mkTraefikLabels {
+                name = "synapse-admin";
+                port = "80";
+                isPublic = false;
+              })
+              // {
+                # 🏠 Homepage integration
+                "homepage.group" = "Media";
+                "homepage.name" = "Synapse Admin";
+                "homepage.icon" = "matrix";
+                "homepage.href" = "http://synapse-admin.${hostname}.local";
+                "homepage.description" = "Matrix homeserver admin interface";
               };
           };
         };
