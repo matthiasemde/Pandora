@@ -33,7 +33,7 @@
           };
 
           # Prometheus
-          prometheusRawImageReference = "prom/prometheus:v3.7.1@sha256:f58966dbb4d1510ed080da881e922b82795e42e569973bd1710cea99e791c7bf";
+          prometheusRawImageReference = "prom/prometheus:v3.7.2@sha256:23031bfe0e74a13004252caaa74eccd0d62b6c6e7a04711d5b8bf5b7e113adc7";
           prometheusImageReference = parseDockerImageReference prometheusRawImageReference;
           prometheusImage = pkgs.dockerTools.pullImage {
             imageName = prometheusImageReference.name;
