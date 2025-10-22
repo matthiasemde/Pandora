@@ -15,7 +15,7 @@ listeners:
     tls: false
     type: http
     x_forwarded: true
-    bind_addresses: ['0.0.0.0']
+    bind_addresses: ['::', '0.0.0.0']
     resources:
       - names: [client, federation]
         compress: false
@@ -145,7 +145,7 @@ push:
   include_content: true
 
 # Federation settings
-federation_domain_whitelist: []
+# federation_domain_whitelist: []
 # federation_ip_range_blacklist: []
 
 # User directory settings
