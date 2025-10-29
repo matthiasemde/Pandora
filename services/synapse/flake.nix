@@ -29,7 +29,7 @@
         let
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
-          synapseRawImageReference = "matrixdotorg/synapse:v1.140.0@sha256:0a2a45ceef86de314fc62c2c2ba78b7468d530be5c5ffa7a91cbe4f725a74c1b";
+          synapseRawImageReference = "matrixdotorg/synapse:v1.141.0@sha256:562adbfc3df12d1024c7277b9807086ed79d8d5fabe24187a31d787af050a6a4";
           synapseImageReference = parseDockerImageReference synapseRawImageReference;
           synapseImage = pkgs.dockerTools.pullImage {
             imageName = synapseImageReference.name;
