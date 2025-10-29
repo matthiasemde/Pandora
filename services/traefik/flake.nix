@@ -27,7 +27,7 @@
             sha256 = "sha256-p3Y61pigO9cCCwQlku+go8vVpw4BBoAgK+TFFZl/nu4=";
           };
 
-          nginxRawImageReference = "nginx:1.29.2-alpine@sha256:7c1b9a91514d1eb5288d7cd6e91d9f451707911bfaea9307a3acbc811d4aa82e";
+          nginxRawImageReference = "nginx:1.29.3-alpine@sha256:b23ea6c10814fccb32ac20485c74168ebefa1c3544a3dddfcb33494d24270df8";
           nginxImageReference = parseDockerImageReference nginxRawImageReference;
           nginxImage = pkgs.dockerTools.pullImage {
             imageName = nginxImageReference.name;
