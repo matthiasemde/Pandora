@@ -1,0 +1,8 @@
+{
+  "extends": ["config:base"],
+  "postUpgradeTasks": {
+    "enabled": true,
+    "commands": ["./.github/scripts/update-docker-hashes.sh"],
+    "fileFilters": ["services/*/flake.nix"]
+  }
+}
