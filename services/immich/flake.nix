@@ -24,7 +24,7 @@
         let
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
-          immichAppRawImageReference = "ghcr.io/immich-app/immich-server:v2.2.0@sha256:90627507693076ec068415daba4d617e48a876ad8069c8cc7e1bc1fdd6f9392b";
+          immichAppRawImageReference = "ghcr.io/immich-app/immich-server:v2.2.1@sha256:2c951a4063b55ec2de197fdf6a85e32b05872d3a18a18eaf851b827ff2622814";
           immichAppImageReference = parseDockerImageReference immichAppRawImageReference;
           immichAppImage = pkgs.dockerTools.pullImage {
             imageName = immichAppImageReference.name;
