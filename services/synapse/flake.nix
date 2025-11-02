@@ -110,7 +110,7 @@
           };
 
           # LiveKit SFU for Element Call MatrixRTC
-          livekitRawImageReference = "livekit/livekit-server:v1.9.2@sha256:8ac8a6391618603622f8df8373a774ee1c4c56c91a83500eaae58ba1c05f17a3";
+          livekitRawImageReference = "livekit/livekit-server:v1.9.3@sha256:75484e317a90991f5e7a8edbc2eb1ee92f690e440c5b7d88a2713b5fa70f368a";
           livekitImageReference = parseDockerImageReference livekitRawImageReference;
           livekitImage = pkgs.dockerTools.pullImage {
             imageName = livekitImageReference.name;
