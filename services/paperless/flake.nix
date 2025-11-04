@@ -30,7 +30,7 @@
             imageName = paperlessImageReference.name;
             imageDigest = paperlessImageReference.digest;
             finalImageTag = paperlessImageReference.tag;
-            sha256 = "sha256-3EZuAQuzwD6fs13ZeOdNU2mTSNZpo6lkQUgZDNcXJXE=";
+            sha256 = "sha256-MCZW7HhyidC5Er78y38a/Rsz02KjsU2sa5wgV5Ve0Iw=";
           };
 
           redisRawImageReference = "docker.io/library/redis:8@sha256:b83648c7ab6752e1f52b88ddf5dabc11987132336210d26758f533fb01325865";
