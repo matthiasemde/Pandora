@@ -29,7 +29,7 @@
             imageName = homepageImageReference.name;
             imageDigest = homepageImageReference.digest;
             finalImageTag = homepageImageReference.tag;
-            sha256 = "sha256-ZhYmbahRxwDj1KuMz5vFC9bY5xSohIUi0HbjlBSlix8=";
+            sha256 = "sha256-gn7l+6c+QZpg7UO4+hu3U3a+8ZNSHiR9XBw43xswj8s=";
           };
 
           # Build custom docker image with baked-in config
