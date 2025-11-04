@@ -21,7 +21,7 @@
             imageName = glancesImageReference.name;
             imageDigest = glancesImageReference.digest;
             finalImageTag = glancesImageReference.tag;
-            sha256 = "sha256-ACodrWvEJ9dfcyygCqw0NCr49IJt82v9nbomxBT5Eyo=";
+            sha256 = "sha256-ruiwNueEVy5615J8HZdEqfZMrbI67XB97QXBo10NMWw=";
           };
         in
         {
