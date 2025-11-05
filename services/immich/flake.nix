@@ -39,7 +39,7 @@
             imageName = immichMLImageReference.name;
             imageDigest = immichMLImageReference.digest;
             finalImageTag = immichMLImageReference.tag;
-            sha256 = "sha256-b6/F5B+IayccVFFAN0RcsOSSSyX0//o0bbrLgui39ec=";
+            sha256 = "sha256-9FQ7NCrBgozPfHS4c2905eQ1/fdmyjWXGsu/bTng208=";
           };
 
           immichRedisRawImageReference = "docker.io/valkey/valkey:8-bookworm@sha256:fec42f399876eb6faf9e008570597741c87ff7662a54185593e74b09ce83d177";
