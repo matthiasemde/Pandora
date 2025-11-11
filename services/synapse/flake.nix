@@ -62,7 +62,7 @@
             imageName = matrixAuthImageReference.name;
             imageDigest = matrixAuthImageReference.digest;
             finalImageTag = matrixAuthImageReference.tag;
-            sha256 = "sha256-scxTWtTXMrokGaGkWh2yJ+fOtdhL5pd402g2uLxi7WM=";
+            sha256 = "sha256-sbpxFT+pY7T6FQdcT+QoHCTJU4K82fDwRp82Z2k8ZN8=";
           };
 
           # Build custom docker image with shell + python + jinja
