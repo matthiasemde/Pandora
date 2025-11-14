@@ -30,7 +30,7 @@
             imageName = mealieImageReference.name;
             imageDigest = mealieImageReference.digest;
             finalImageTag = mealieImageReference.tag;
-            sha256 = "sha256-FwzCw9/Vltos4xMm1pfHOtZaWEOMf9kxAvmZM8h5jLs=";
+            sha256 = "sha256-VnDE9bfV5yrim+rRYYWIod8r+xmaVHNQ7N9Yqawqzbs=";
           };
 
           postgresRawImageReference = "postgres:18@sha256:073e7c8b84e2197f94c8083634640ab37105effe1bc853ca4d5fbece3219b0e8";
