@@ -38,7 +38,7 @@
         let
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
-          authentikRawImageReference = "ghcr.io/goauthentik/server:2025.10.1@sha256:8f70895ad48bb7de656a2aac7c78c2bec6a4e820e009a570b0c285fe406eadac";
+          authentikRawImageReference = "ghcr.io/goauthentik/server:2025.10.2@sha256:8322e449feefcc2416f0401038d5a1a28552c4403b079a59d3b4d978d8f3f530";
           authentikImageReference = parseDockerImageReference authentikRawImageReference;
           authentikImage = pkgs.dockerTools.pullImage {
             imageName = authentikImageReference.name;
