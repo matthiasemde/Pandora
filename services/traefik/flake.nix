@@ -24,7 +24,7 @@
             imageName = traefikImageReference.name;
             imageDigest = traefikImageReference.digest;
             finalImageTag = traefikImageReference.tag;
-            sha256 = "sha256-B92gzeZ8ja8is6i2nlcdisbGAMuCOy8d/92eSGGF+14=";
+            sha256 = "sha256-7PPrTwhaMz1EJPB8uogFnVxjlp903jZhyMOoaMH0KV8=";
           };
 
           nginxRawImageReference = "nginx:1.29.3-alpine@sha256:b23ea6c10814fccb32ac20485c74168ebefa1c3544a3dddfcb33494d24270df8";
