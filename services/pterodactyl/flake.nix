@@ -49,7 +49,7 @@
             imageName = mariadbImageReference.name;
             imageDigest = mariadbImageReference.digest;
             finalImageTag = mariadbImageReference.tag;
-            sha256 = "sha256-CCCankztFYHK4DaJ5hdSR5OqUW6FmpLNEdfd/r5fqVA=";
+            sha256 = "sha256-xQtplkcgVSbJWWYESB4U4JTepdYShbL/ShcQd0TkrvQ=";
           };
 
           redisRawImageReference = "redis:8@sha256:f0957bcaa75fd58a9a1847c1f07caf370579196259d69ac07f2e27b5b389b021";
