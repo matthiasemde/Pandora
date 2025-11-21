@@ -43,7 +43,7 @@
             sha256 = "sha256-qIHlP9PHfO4aHgP+JyFm9mIxdT1pAM8Ep1XtyaDz+oU=";
           };
 
-          mariadbRawImageReference = "mariadb:12.0.2@sha256:5b6a1eac15b85b981a61afb89aea2a22bf76b5f58809d05f0bcc13ab6ec44cb8";
+          mariadbRawImageReference = "mariadb:12.1.2@sha256:e1bcd6f85781f4a875abefb11c4166c1d79e4237c23de597bf0df81fec225b40";
           mariadbImageReference = parseDockerImageReference mariadbRawImageReference;
           mariadbImage = pkgs.dockerTools.pullImage {
             imageName = mariadbImageReference.name;
