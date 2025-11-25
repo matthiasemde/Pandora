@@ -22,7 +22,7 @@
             imageName = kopiaImageReference.name;
             imageDigest = kopiaImageReference.digest;
             finalImageTag = kopiaImageReference.tag;
-            sha256 = "sha256-Mvv4isG5gFtyJnrkBtbhASjrCbHuqFMjqzVyO7g1q/s=";
+            sha256 = "sha256-45JVzZGVDcXdzPEe32dDnLM3b4CzknRUGzEHrIXpRvU=";
           };
         in
         {
