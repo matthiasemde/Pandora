@@ -35,7 +35,7 @@
             imageName = synapseImageReference.name;
             imageDigest = synapseImageReference.digest;
             finalImageTag = synapseImageReference.tag;
-            sha256 = "sha256-x77UvkK4uCjImRYI5YShFY3zu70Krsk4vXgmBkzSCXY=";
+            sha256 = "sha256-iNQ2ucimIEmwQcjl0aBiejsp7Qph1frvWZpcgp91HD0=";
           };
 
           postgresRawImageReference = "postgres:18@sha256:073e7c8b84e2197f94c8083634640ab37105effe1bc853ca4d5fbece3219b0e8";
