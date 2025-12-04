@@ -24,7 +24,7 @@
         let
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
-          mealieRawImageReference = "ghcr.io/mealie-recipes/mealie:v3.6.0@sha256:c6a13e456b22f4f05db56506dad4debfe44fbe54e59c062ebde046b486f0501f";
+          mealieRawImageReference = "ghcr.io/mealie-recipes/mealie:v3.6.1@sha256:39aad579c9c4d3822298968675fc1f79c483e9de38e820baf8bab9ec56dc0b7e";
           mealieImageReference = parseDockerImageReference mealieRawImageReference;
           mealieImage = pkgs.dockerTools.pullImage {
             imageName = mealieImageReference.name;
