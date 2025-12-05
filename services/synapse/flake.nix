@@ -116,7 +116,7 @@
             imageName = livekitImageReference.name;
             imageDigest = livekitImageReference.digest;
             finalImageTag = livekitImageReference.tag;
-            sha256 = "sha256-cb05iuvzSWaZPoW6TPCSZfrlWu35LHWW8mMp7UgMmu4=";
+            sha256 = "sha256-TnYJ04EKt61Xu+iBkZGhtJMNS0LibkHXBBwu6d89iRc=";
           };
 
           livekitImageDerived = pkgs.dockerTools.buildImage {
