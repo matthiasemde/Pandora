@@ -144,7 +144,7 @@
             imageName = elementCallJwtImageReference.name;
             imageDigest = elementCallJwtImageReference.digest;
             finalImageTag = elementCallJwtImageReference.tag;
-            sha256 = "sha256-7ebWodUNDJqZlen9vAW6kOJH2Zsz3eQ53hQpfn7c8iw=";
+            sha256 = "sha256-9TWz4VTuIno5UkYjQ7EI6X8XcTKhQc+1RLvXHyxp82g=";
           };
         in
         {
