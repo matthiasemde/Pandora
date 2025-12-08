@@ -33,7 +33,7 @@
             imageName = adguardImageReference.name;
             imageDigest = adguardImageReference.digest;
             finalImageTag = adguardImageReference.tag;
-            sha256 = "sha256-NJcBTNicPi/jeAjzf+DUlK56I5sJ7gfC6oyF2uKoRKg=";
+            sha256 = "sha256-rYuBsO4QCUNLpbTTMtuE4F6FYjTA56cjPthDTikEqNE=";
           };
 
           # Build custom docker image with baked-in config
