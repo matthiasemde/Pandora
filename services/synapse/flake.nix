@@ -106,7 +106,7 @@
             imageName = nginxImageReference.name;
             imageDigest = nginxImageReference.digest;
             finalImageTag = nginxImageReference.tag;
-            sha256 = "sha256-qrQIBp2EbKw3Aicu424rbu26v2T1LZgHVQ+hJKKZQxE=";
+            sha256 = "sha256-qgeS1JFHApzVUad0UvVF1pPuvdvg0o2+Q3g8GXu1By8=";
           };
 
           # LiveKit SFU for Element Call MatrixRTC
