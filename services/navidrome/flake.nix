@@ -27,7 +27,7 @@
             imageName = navidromeImageReference.name;
             imageDigest = navidromeImageReference.digest;
             finalImageTag = navidromeImageReference.tag;
-            sha256 = "sha256-gqHFoDTkXsy6glM8kizYdd/OTKnNWrKSXYG7o93JR34=";
+            sha256 = "sha256-TxN/hanbf9TsQK/bjCLt49z+ewp34J26G4ZptYGL2QM=";
           };
         in
         {
