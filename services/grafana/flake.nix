@@ -43,7 +43,7 @@
             imageName = prometheusImageReference.name;
             imageDigest = prometheusImageReference.digest;
             finalImageTag = prometheusImageReference.tag;
-            sha256 = "sha256-+SB+UtWbgnJzC7Fcj1y86u0LjnFw9W7Yz7w43dfjvSw=";
+            sha256 = "sha256-0Ub7lLnPKqXdUZ83okRou9epOsb5iZPMyMGz45ZMOaU=";
           };
         in
         {
