@@ -33,7 +33,7 @@
             imageName = grafanaImageReference.name;
             imageDigest = grafanaImageReference.digest;
             finalImageTag = grafanaImageReference.tag;
-            sha256 = "sha256-uv2yeV6wv0jXETt524HbeWvPJTkxmezP6EBECd8FR0Q=";
+            sha256 = "sha256-d9VJVVf3wsC4RSqjJxu9e6xJ72EVI0Iis0DqaypsDTc=";
           };
 
           # Prometheus
