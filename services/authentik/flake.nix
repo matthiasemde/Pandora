@@ -44,7 +44,7 @@
             imageName = authentikImageReference.name;
             imageDigest = authentikImageReference.digest;
             finalImageTag = authentikImageReference.tag;
-            sha256 = "sha256-M35SfbuUxbGiWGZQRsRZtF9hIZgufdQhBpk0xX9NyrY=";
+            sha256 = "sha256-J+p1ll1adunZWM2RSk4riD9+cpkNB3cDb5r++eVeswM=";
           };
 
           postgresRawImageReference = "postgres:18@sha256:073e7c8b84e2197f94c8083634640ab37105effe1bc853ca4d5fbece3219b0e8";
