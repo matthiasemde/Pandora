@@ -55,7 +55,7 @@
             imageName = alpineImageReference.name;
             imageDigest = alpineImageReference.digest;
             finalImageTag = alpineImageReference.tag;
-            sha256 = "sha256-h3aI1WwzCiOZUnInGmDRT9DLEnJWk3OJI5tHuLqZzZo=";
+            sha256 = "sha256-OGF7lmDWGB6zg63bYyV1UDTWHCzTejvlZJw5w47CElY=";
           };
         in
         {
