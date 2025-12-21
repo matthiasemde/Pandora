@@ -44,9 +44,9 @@ for flake in $modified_flakes; do
   cp "$flake" "$temp_file"
   
   # Get the diff for this file to find which lines changed
-  # We're looking for changes to RawImageReference lines
+  # We're looking for changes to RawImageReference or rawImageReference lines
   changed_image_refs=$(git diff "origin/$BASE_BRANCH"...HEAD -- "$flake" | \
-    grep -E '^\+.*RawImageReference.*=.*".*@sha256:' | \
+    grep -E '^\+.*(RawImageReference|rawImageReference).*=.*".*@sha256:' | \
     sed 's/^+//' || true)
   
   if [ -z "$changed_image_refs" ]; then
