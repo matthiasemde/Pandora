@@ -152,7 +152,7 @@ for flake in $modified_flakes; do
       echo -e "${GREEN}✓ Hash is already up to date${NC}"
     fi
     
-  done < <(grep -E '^[[:space:]]*rawImageReference[[:space:]]*=[[:space:]]*"[^"]+@sha256:[^"]+"' "$flake")
+  done < <(grep -iE '^[[:space:]]*rawImageReference[[:space:]]*=[[:space:]]*"[^"]+@sha256:[^"]+"' "$flake")
   
   # If changes were made to this file, update it
   if ! cmp -s "$flake" "$temp_file"; then
