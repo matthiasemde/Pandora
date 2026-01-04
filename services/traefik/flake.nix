@@ -16,7 +16,7 @@
         }:
         {
           traefik = {
-            rawImageReference = "traefik:v3.6.5@sha256:2979bff651c98e70345dd886186a7a15ee3ce18b636af208d4ccbf2d56dbdddd";
+            rawImageReference = "traefik:v3.6.6@sha256:82d3d16dde0474a51fef00b28de143d48b67f7a27453224d5e7b5aaefff26a97";
             nixSha256 = "sha256-GhB6MeOvLn94+YYWtkh7xB92nQPjzPgl3FEx7nPuWsc=";
             ports = [
               "80:80"
