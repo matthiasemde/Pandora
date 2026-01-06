@@ -133,7 +133,7 @@
           # ---------------------------
           pterodactyl-daemon = {
             rawImageReference = "ccarney16/pterodactyl-daemon:v1.12.0@sha256:8c0fa4445e67601f62fe2caa5b9bcf466841b0c02ef43718992f52ff64c3c8d0";
-            nixSha256 = "sha256-qIHlP9PHfO4aHgP+JyFm9mIxdT1pAM8Ep1XtyaDz+oU=";
+            nixSha256 = "sha256-Db7B0j2UvcYHN9ttVG+MeDyYSdY/mjfuZrjPPU4g59Y=";
             # privileged = true;
             networks = [
               backendNetwork
