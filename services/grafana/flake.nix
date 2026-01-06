@@ -80,7 +80,7 @@
 
           prometheus = {
             rawImageReference = "prom/prometheus:v3.9.0@sha256:3ea2ed3b8cdfe3ff78aa05473a7ad36b916bdf2464c83b06bcd37c1a67620233";
-            nixSha256 = "sha256-0Ub7lLnPKqXdUZ83okRou9epOsb5iZPMyMGz45ZMOaU=";
+            nixSha256 = "sha256-ol9TDNcJckWjte5laNi4fEepPf3Io9/5NQ3SL2w7WXY=";
             networks = [
               backendNetwork
               "monitoring"
