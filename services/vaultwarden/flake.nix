@@ -15,7 +15,7 @@
         {
           vaultwarden = {
             rawImageReference = "vaultwarden/server:1.35.2@sha256:d89a6d21e361254670c24a4272b4b5f245e402c284f2f55de2c379fdbcfa1fa5";
-            nixSha256 = "sha256-0bc1s1luQPFiwYH3THVFg91zJD6V8Ew/x+ciUSBZFzQ=";
+            nixSha256 = "sha256-1VcmWZPf0zlUnxwHraGJb8SfKkl+CI5sJXTgj1/uRoo=";
             environment = {
               # Server hostname
               "DOMAIN" = "https://vaultwarden.${domain}";
