@@ -128,15 +128,13 @@ This repository holds the configuration of my homelab powered by NixOS
 │   │   ├── music-sync.sh
 │   │   └── README.md
 │   ├── nextcloud
-│   │   ├── Dockerfile
 │   │   ├── flake.nix
 │   │   ├── README.md
-│   │   ├── secrets
-│   │   │   ├── NEXTCLOUD_ADMIN_PASSWORD.env.age
-│   │   │   ├── NEXTCLOUD_ADMIN_PASSWORD.env.age.nix
-│   │   │   ├── POSTGRES_PASSWORD.env.age
-│   │   │   └── POSTGRES_PASSWORD.env.age.nix
-│   │   └── supervisord.conf
+│   │   └── secrets
+│   │       ├── NEXTCLOUD_ADMIN_PASSWORD.env.age
+│   │       ├── NEXTCLOUD_ADMIN_PASSWORD.env.age.nix
+│   │       ├── POSTGRES_PASSWORD.env.age
+│   │       └── POSTGRES_PASSWORD.env.age.nix
 │   ├── paperless
 │   │   ├── flake.nix
 │   │   └── secrets
@@ -218,7 +216,7 @@ This repository holds the configuration of my homelab powered by NixOS
 └── virtualization
     └── flake.nix
 
-56 directories, 158 files
+56 directories, 156 files
 ```
 
 <!-- DIRECTORY_STRUCTURE_END -->
