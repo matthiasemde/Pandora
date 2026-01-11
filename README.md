@@ -220,13 +220,15 @@ This repository holds the configuration of my homelab powered by NixOS
 │           └── service-credentials.env.age.nix
 ├── SETUP.md
 ├── tools
+│   ├── deploy.sh
 │   ├── install-precommit-hook.sh
 │   ├── migrate-db.sh
 │   └── pre-commit-hook.sh
-└── virtualization
-    └── flake.nix
+├── virtualization
+│   └── flake.nix
+└── .woodpecker.yml
 
-56 directories, 158 files
+56 directories, 156 files
 ```
 
 <!-- DIRECTORY_STRUCTURE_END -->
