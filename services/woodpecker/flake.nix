@@ -58,7 +58,7 @@
           };
 
           woodpecker-agent = {
-            rawImageReference = "woodpeckerci/woodpecker-agent:v3.12.0@sha256:098ac6cdd4644d9ffce50d9a19c864c1c91eb3c4a07f0924af113d702e3adbe9";
+            rawImageReference = "woodpeckerci/woodpecker-agent:v3.13.0@sha256:a983b1016217ad94cdab48d732ec97b5b1f72718725d651183d7ec885f7caf35";
             nixSha256 = "sha256-op/uQN6a7sNDZMBeZKHX3bmmYifpJuIpKpaHSP9EVjI=";
             environment = {
               "WOODPECKER_SERVER" = "woodpecker-server:9000";
