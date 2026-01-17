@@ -116,7 +116,7 @@
 
           cadvisor = {
             rawImageReference = "gcr.io/cadvisor/cadvisor:v0.55.1@sha256:3de2bd5203120b866d74a9b283b2ffb8ec382fbf9dc321814700c6ea6f44ec57";
-            nixSha256 = "sha256-LrD875RTiMyqAvaeDg+czmCQMcdlMuQEnfdCVnnDypU=";
+            nixSha256 = "sha256-zrzTAkITDXWe630Y/1+RO5J//NnR/R/LIC/RvQykapo=";
             volumes = [
               "/:/rootfs:ro"
               "/var/run:/var/run:ro"
