@@ -1,0 +1,15 @@
+# default ip:hostname to bind to
+bind = "[::]:5000"
+
+# Sets number of workers to start in the webserver
+workers = 4
+
+# Sets the per-worker maximum number of concurrent connections
+max_connection_rate = 256
+
+# binary cache priority that is advertised in /nix-cache-info
+priority = 50
+
+# Whether to enable transparent compression with zstd
+# Note: this is incompatible with resuming, so disabled for reliability
+enable_compression = false

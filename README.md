@@ -73,6 +73,12 @@ This repository holds the configuration of my homelab powered by NixOS
 │   │       ├── authentik-credentials.env.age.nix
 │   │       ├── smtp-credentials.env.age
 │   │       └── smtp-credentials.env.age.nix
+│   ├── harmonia
+│   │   ├── config
+│   │   │   └── harmonia.toml
+│   │   ├── flake.nix
+│   │   ├── HARMONIA_SETUP.md
+│   │   └── README.md
 │   ├── home-assistant
 │   │   ├── config
 │   │   │   ├── automations.yaml
@@ -229,7 +235,7 @@ This repository holds the configuration of my homelab powered by NixOS
 └── .woodpecker
     └── deploy.yaml
 
-59 directories, 166 files
+61 directories, 170 files
 ```
 
 <!-- DIRECTORY_STRUCTURE_END -->
