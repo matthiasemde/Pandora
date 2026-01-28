@@ -88,7 +88,7 @@
 
           ${cronName} = {
             rawImageReference = "alpine:3.23.3@sha256:25109184c71bdad752c8312a8623239686a9a2071e8825f20acb8f2198c3f659";
-            nixSha256 = "sha256-OGF7lmDWGB6zg63bYyV1UDTWHCzTejvlZJw5w47CElY=";
+            nixSha256 = "sha256-gTKr5yQqJHECyXSyLA9GRT4Qm+ptahnRwy53W8Easb4=";
             volumes = [ "/etc/localtime:/etc/localtime:ro" ];
             cmd = [
               "sh"
