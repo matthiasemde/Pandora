@@ -23,7 +23,7 @@
         {
           paperless-app = {
             rawImageReference = "ghcr.io/paperless-ngx/paperless-ngx:2.20.6@sha256:6a4edf042efa99eb9ce7cfc8135ae954d93b18ab69fa7c8a11ec4385924a8737";
-            nixSha256 = "sha256-xAQhglmns44JdgesfQ/2NhFmo0AOO6nSQ8ffhSctqVA=";
+            nixSha256 = "sha256-ZTtLcELOfI1rcORGCrdXY7mbh8ztT8ibu4UArCWH0L8=";
             environment = {
               "PAPERLESS_URL" = "https://paperless.${domain}";
               "PAPERLESS_ACCOUNT_ALLOW_SIGNUPS" = "false";
