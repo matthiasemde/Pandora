@@ -239,7 +239,7 @@
             in
             {
               rawImageReference = "nginx:1.29.5-alpine@sha256:05fcc6f6c80dc65c0f241f250677aad26e0962d118abaa65a513796862ff915d";
-              nixSha256 = "sha256-qgeS1JFHApzVUad0UvVF1pPuvdvg0o2+Q3g8GXu1By8=";
+              nixSha256 = "sha256-p+94y2vOQYXatNh9ldg4KrW4e50juQqYPpiV8fa2ALg=";
               networks = [
                 "traefik"
               ];
