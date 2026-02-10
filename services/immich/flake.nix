@@ -56,7 +56,7 @@
           };
 
           immich-machine-learning = {
-            rawImageReference = "ghcr.io/immich-app/immich-machine-learning:v2.5.5@sha256:2e17e15855907ece0d5b3a7bf625b12f6d987a5854fa71d888641acae28b0323";
+            rawImageReference = "ghcr.io/immich-app/immich-machine-learning:v2.5.6@sha256:b213fa3c82d27a21a299c46ffbb38a091f18384db1ad67d409a3b34fe0fce556";
             nixSha256 = "sha256-2y8a7sJH2ArT8xXgZSOKwSiTrMMjd54d8m2/d2h7VZU=";
             volumes = [ "immich-ml-cache:/cache" ];
             networks = [ backendNetwork ];
