@@ -15,7 +15,7 @@
         {
           navidrome = {
             rawImageReference = "deluan/navidrome:0.60.3@sha256:a5dce8f33304714dd138e870cca0dcab3d937ca236be1a9f2b97da009d1a0048";
-            nixSha256 = "sha256-zAGDCjE7FcJ7PddLCBU8kv75M0qcoC0IQot+YbHOqCQ=";
+            nixSha256 = "sha256-p2FxdHSElDUdPDBO+asFtnl6BE0doKN8aYeOY+VHt60=";
             environment = {
               ND_SCANSCHEDULE = "1h";
               ND_LOGLEVEL = "info";
