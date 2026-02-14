@@ -93,7 +93,7 @@
           # ---------------------------
           pterodactyl-database = {
             rawImageReference = "mariadb:12.2.2@sha256:3ba727e641ef0ea24054e47c72a831b1067da32d5139c0405b629c25b115eb89";
-            nixSha256 = "sha256-xQtplkcgVSbJWWYESB4U4JTepdYShbL/ShcQd0TkrvQ=";
+            nixSha256 = "sha256-sicAmjf5KrAfOOeVzme1SQrVNZ2QIt6wBvrmYS3rqE0=";
             volumes = [
               "/data/services/pterodactyl/database:/var/lib/mysql:z"
             ];
