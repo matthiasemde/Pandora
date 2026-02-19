@@ -15,7 +15,7 @@
         {
           uptime-kuma = {
             rawImageReference = "louislam/uptime-kuma:2.1.3@sha256:32c352a235fd10f98b3f64a6a4345d3c0c7f4e8be7810d2e1e867f7fe2e48ba2";
-            nixSha256 = "sha256-dWDllZgXkzpJPhuFb4HUcaLZWDUcqjw8qtIkJeJUoPY=";
+            nixSha256 = "sha256-pdwnk95XpVJvSOyoghcX8oWZxe6QmBI+He3FrOKRBd8=";
             networks = [
               "traefik"
             ];
