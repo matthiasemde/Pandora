@@ -74,7 +74,7 @@
 
           authentik-server = {
             rawImageReference = "ghcr.io/goauthentik/server:2026.2.0@sha256:cfd955129ff142be93e7818682a04194b39c2ae8909a33f18e98b055baac27bf";
-            nixSha256 = "sha256-mHgOnnk1EJndEfRTNLlZX0jUY1/9t8PVNII/LnF7HAE=";
+            nixSha256 = "sha256-KrCwOBBZS17lwNHL8BUXu8SgTDPbEtRCLZW00n4vGjA=";
             cmd = [ "server" ];
             environment = env // {
               "AUTHENTIK_POSTGRESQL__HOST" = "authentik-database";
@@ -109,7 +109,7 @@
 
           authentik-worker = {
             rawImageReference = "ghcr.io/goauthentik/server:2026.2.0@sha256:cfd955129ff142be93e7818682a04194b39c2ae8909a33f18e98b055baac27bf";
-            nixSha256 = "sha256-mHgOnnk1EJndEfRTNLlZX0jUY1/9t8PVNII/LnF7HAE=";
+            nixSha256 = "sha256-KrCwOBBZS17lwNHL8BUXu8SgTDPbEtRCLZW00n4vGjA=";
             cmd = [ "worker" ];
             environment = env // {
               "AUTHENTIK_POSTGRESQL__HOST" = "authentik-database";
