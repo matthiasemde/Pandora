@@ -14,7 +14,7 @@
         {
           microbin = {
             rawImageReference = "danielszabo99/microbin:2.1.2@sha256:4e08d1d127e5804f5e43a63c0c9555497d506ee94abb570214134b73a4810f62";
-            nixSha256 = "sha256-aV9peKIJy7I07u13mlPBAmxeU4QYvktN7YEYPKO0ndg=";
+            nixSha256 = "sha256-23787kAeEAXa7ZDD3XW+e+76nXPvgF41QfD5+qeHhsg=";
             networks = [ "traefik" ];
             volumes = [
               "/data/services/microbin/data:/app/microbin_data"
