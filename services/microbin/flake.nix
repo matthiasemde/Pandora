@@ -13,7 +13,7 @@
         }:
         {
           microbin = {
-            rawImageReference = "danielszabo99/microbin:2.1.2@sha256:4e08d1d127e5804f5e43a63c0c9555497d506ee94abb570214134b73a4810f62";
+            rawImageReference = "danielszabo99/microbin:2.1.4@sha256:6660e5ccad0d764fa3c0032464ffb8f4b4f28c92a2eb9e39202b94cdc5b68909";
             nixSha256 = "sha256-23787kAeEAXa7ZDD3XW+e+76nXPvgF41QfD5+qeHhsg=";
             networks = [ "traefik" ];
             volumes = [
