@@ -23,7 +23,7 @@
         {
           outline-app = {
             rawImageReference = "outlinewiki/outline:1.6.1@sha256:a750f764080ce28d4a7393176011c8e2e4170b41689a8f6d91327dadf4904eb6";
-            nixSha256 = "sha256-v9/HeWZmLe49pQ7k/bvCT2t+ujiXlIKeouL9FXyhVQ8=";
+            nixSha256 = "sha256-DskpzEQ6ymJzuxjxsPWJ52k9xfPghycZDBECAwRRfcI=";
             networks = [
               backendNetwork
               "traefik"
