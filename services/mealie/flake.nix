@@ -23,7 +23,7 @@
         {
           mealie-app = {
             rawImageReference = "ghcr.io/mealie-recipes/mealie:v3.14.0@sha256:6785e5ca87f0ae25f90be850fd1473e92a2c0bde1b5ef07be111c4c9565aeb75";
-            nixSha256 = "sha256-6MXU2nmydhoud//bpbXAE3GErLH41nklEGegcqJEMkg=";
+            nixSha256 = "sha256-8fzSwIR2ZQ8aCT9QGibcVzI3DZq4O9GlKeRXjCS3gYA=";
             environment = {
               # Base URL
               "BASE_URL" = "https://mealie.${domain}";
