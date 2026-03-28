@@ -24,7 +24,7 @@
           '';
 
           homepageRawImageReference = "ghcr.io/gethomepage/homepage:v1.12.0@sha256:5bb66eac5d48f021fd60414add03aa123d1feb85770550ddb1d99a5b8851c6c2";
-          homepageNixSha256 = "sha256-L2+6EN4gsk+hg09WfxtzsaucJ8kqHIsC+3My3toRubU=";
+          homepageNixSha256 = "sha256-KpLJqNKFU3dwriD1Hjz7CSITYqiyfuWidd8Rq5TCgMc=";
           homepageImageReference = parseDockerImageReference homepageRawImageReference;
           homepageImage = pkgs.dockerTools.pullImage {
             imageName = homepageImageReference.name;
